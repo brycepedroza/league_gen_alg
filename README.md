@@ -1,1 +1,1 @@
-"League of Legends Team Composition Genetic Algorithm" 
+League of Legends Team Composition Genetic Algorithm 

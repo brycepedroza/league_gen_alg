@@ -31,5 +31,5 @@ if __name__ == "__main__":
         data = get_champion_winrates(key)
         win_rates = data['stats']['matchups']['all']
         value['win_rates'] = win_rates
-    with open("full_champion_data.json", "w") as f:
+    with open("genetic_algorithm/full_champion_data.json", "w") as f:
         json.dump(champion_information, f)
