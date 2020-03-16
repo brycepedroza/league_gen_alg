@@ -34,8 +34,8 @@ def filter_champion_information(
         champion_ids: list, champion_information: dict):
     """
     Given a list of champion ids, remove those from the
-     champion information dict. This makes sure the Gen Alg
-     cant pick champions from the enemy team comp
+    champion information dict. This makes sure the Gen Alg
+    cant pick champions from the enemy team comp
     :param champion_ids: List of champions from enemy team
     :param champion_information: All champion information
     :return: champion information without enemy champions

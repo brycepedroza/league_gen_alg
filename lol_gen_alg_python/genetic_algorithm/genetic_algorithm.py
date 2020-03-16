@@ -97,20 +97,11 @@ class GeneticAlgorithm:
             individual1 = random.randint(0, len(self.population)-1)
             while individual1 == i:
                 individual1 = random.randint(0, len(self.population)-1)
-            # new_generation.append(copy.deepcopy(self.population[i]))
 
             if self.population[i].fitness >= self.population[individual1].fitness:
-                # if self.population[i] in new_generation:
-                #     new_generation.append(copy.deepcopy(self.population[i]))
-                # else:
-                #     new_generation.append(self.population[i])
                 new_generation.append(copy.deepcopy(self.population[i]))
 
             else:
-                # if self.population[individual1] in new_generation:
-                #     new_generation.append(copy.deepcopy(self.population[individual1]))
-                # else:
-                #     new_generation.append(self.population[individual1])
                 new_generation.append(copy.deepcopy(self.population[individual1]))
 
         self.population = new_generation

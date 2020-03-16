@@ -13,11 +13,11 @@ export default class Champion {
         :param id_to_check: ID to check as a string
         :return: Win rate as a float or None
 		*/
-		champion = this.matchups[id_to_check];
-		var win_rate = champion === undefined ? null :  
+		var champion = this.matchups[id_to_check];
+		var win_rate = champion === undefined ? null :
 		champion.winrate/100 * Math.log10(champion.games);
 		return win_rate
 	}
 
-	
+
 }
