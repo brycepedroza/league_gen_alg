@@ -82,11 +82,11 @@ export default class GeneticAlgorithm {
     for (let i = 0; i < this.population.length; i++){
       let temp_index = getRandomInt(this.population.length);
 
-      while (temp_index == i) {
+      while (temp_index === i) {
         temp_index = getRandomInt(this.population.length);
       }
 
-      if (this.population[i].fitneses >= this.population[temp_index].fitness){
+      if (this.population[i].fitness >= this.population[temp_index].fitness){
         new_generation.push(cloneDeep(this.population[i]));
       }
       else {
@@ -104,13 +104,11 @@ export default class GeneticAlgorithm {
       avg_fitness = avg_fitness + this.population[i].fitness;
     }
     this.average_fitness = avg_fitness/this.population.length;
-
-    // Keep listt of 10 bestt individuals.
+    // Keep list of 10 bestt individuals.
     this.best_individuals = this.best_individuals.concat(this.population);
-    this.best_individuals = this.best_individuals.sort((a,b) => (a.fitness > b.fitness) ? 1 : -1);
+    this.best_individuals = this.best_individuals.sort((a,b) => (a.fitness > b.fitness) ? -1 : 1);
     this.best_individuals = this.best_individuals.slice(0,10);
 
-    console.log(this.average_fitness);
   }
 
   iterate_population(){

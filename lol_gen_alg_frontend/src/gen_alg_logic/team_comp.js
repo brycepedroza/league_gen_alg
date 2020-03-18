@@ -46,7 +46,6 @@ export default class TeamComp {
 				}
 			})
 		})
-		console.log(avg_winrate, total_calculated, avg_winrate/total_calculated * Math.log10(total_calculated))
 		let fitness = avg_winrate/total_calculated * Math.log10(total_calculated);
 		this.fitness = fitness;
 	}

@@ -119,6 +119,7 @@ class GeneticAlgorithm:
         fitness_vals = ",".join([str(i.fitness) for i in self.best_individuals])
         logger.info(f"Best Fitness: {fitness_vals}")
 
+
     def iterate_population(self):
         self.crossover()
         self.mutate()
