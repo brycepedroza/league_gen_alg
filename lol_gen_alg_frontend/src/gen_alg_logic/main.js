@@ -3,7 +3,7 @@ import TeamComp from './team_comp.js';
 import GeneticAlgorithm from './genetic_algorithm.js';
 import cloneDeep from 'lodash/cloneDeep';
 
-let champion_information = require('./full_champion_data.json'); //with path
+let champion_information = require('../data/full_champion_data.json'); //with path
 
 // Change these as you wish :)
 const POPULATION = 100
