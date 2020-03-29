@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Layout, List, Card, Input, Row, Col} from 'antd';
+import { Button, List, Input, Row, Col} from 'antd';
 
 let gen_alg = require("../gen_alg_logic/main.js");
 
@@ -7,8 +7,13 @@ let gen_alg = require("../gen_alg_logic/main.js");
 const champion_json = require("../data/full_champion_data.json");
 
 let champion_list = [];
-for (var key in champion_json) {
-	champion_list.push({key: key, name: champion_json[key].name});	
+for (var id in champion_json) {
+	champion_list.push({
+		id: id, 
+		name: champion_json[id].name,
+		total_games: champion_json[id].total_games,
+		overall_win_rate: champion_json[id].overall_win_rate
+	});	
 }
 champion_list.sort((a,b) => (a.name > b.name) ? 1:-1)
 
@@ -33,19 +38,18 @@ export default class ChampionList extends Component{
 		super(props);
 		this.state = {
 			available_champs:champion_list,
-			selected_champs: new Set()
+			selected_champs: new Set(),
+			returned_champs: []
 		}
 	}
 
 	handle_filter(e){
-		console.log(e.target.value);
 		this.setState({
 			available_champs: filter_champions(e.target.value)
 		})
 	}
 
 	select_champion(item){
-		console.log(item);
 		let champs = this.state.selected_champs;
 		let size = champs.size;
 		champs.add(item);
@@ -58,14 +62,13 @@ export default class ChampionList extends Component{
 		}
 		this.setState({
 			selected_champs: champs
-		}, () => {for (let item of this.state.selected_champs) console.log(item.name)})
+		})
 	}
 
 	lock_team(){
 		let champion_ids = [];
-		for (let item of this.state.selected_champs) champion_ids.push(item.key)
-		console.log(gen_alg.full_gen_alg(champion_ids));
-
+		for (let item of this.state.selected_champs) champion_ids.push(item.id)
+		this.setState({returned_champs: gen_alg.full_gen_alg(champion_ids)}, () => {console.log(this.state.returned_champs, champion_list)})
 	}
 
 
@@ -77,14 +80,18 @@ export default class ChampionList extends Component{
 					style={{maxWidth: 400, margin: 10}}
 					placeholder="Search for a Champion"
 					onChange={this.handle_filter.bind(this)}/>
-				<Row style={{height: "100%"}}>
-					<Col className="box" sm={24} md={6} lg={5}>
+				<Row>
+					<Col style={{minHeight: "100%"}} className="box" xs={{span:24, order:2}} md={{span:6, order:1}} lg={{span:5, order:1}}>
 					 	{Array.from(this.state.selected_champs).map((champ)=>
-					 			<div className="box" style={{height: "20%"}} key={champ.key}>{champ.name}</div>
-					 		)}
+				 			<div className="your_champions" key={champ.id}>
+				 				<p style={{margin:0}}>{champ.name}</p>
+				 				<p style={{margin:0}}>{champ.total_games}</p>
+				 				<p style={{margin:0}}>{champ.overall_win_rate}</p>
+				 			</div>
+				 		)}
 					</Col>
-					<Col className="box" sm={24} md={12} lg={14}>
-					 	<List style={{maxHeight: 700, overflowY: "scroll", overflowX: "hidden"}}
+					<Col style={{height: "100%"}} className="box" xs={{span:24, order:1}} md={{span:12, order:2}} lg={{span:14, order:2}}>
+					 	<List className="champ_select"
 						    grid={{
 						      gutter: 0,
 						      xs: 3,
@@ -96,27 +103,42 @@ export default class ChampionList extends Component{
 						    }}
 						    dataSource={this.state.available_champs}
 						    renderItem={item => (
-						      <List.Item className="champion_box" onClick={this.select_champion.bind(this, item)}>
-						      	<p>{item.name}</p>
-						      </List.Item>
+					      		<List.Item className="champion_select_box" onClick={this.select_champion.bind(this, item)}>
+					 				<img className="champ_select_image" src={require('../images/'+item.name+'.png')}/>
+				      				<p>{item.name}</p>
+					      		</List.Item>
 						    )}
-						  />
+					  	/>
 					</Col>
-					<Col className="box" xs={24} sm={24} md={6} lg={5}>
-					 	Col
+
+					<Col style={{height: "100%"}} className="box" xs={{span:24, order:4}} md={{span:6, order:3}} lg={{span:5, order:3}}>
+					 	{Array.from(this.state.returned_champs).map((champ)=>
+				 			<div className="your_champions" key={champ.id}>
+				 				<p style={{margin:0}}>{champ.name}</p>
+				 				<p style={{margin:0}}>{champ.total_games}</p>
+				 				<p style={{margin:0}}>{champ.overall_win_rate}</p>
+				 				{Object.entries(champ.matchups).map(([id, enemy]) => 
+				 					<p style={{margin:0}} key={id}> {champion_json[id].name}: {enemy.winrate} | {enemy.games}  </p>)}
+			 				</div>
+				 		)}					
+				 	</Col>
+
+					<Col className="box" xs={{span:24, order:3}} md={{span:24, order:4}}>
+						<div style={{margin: 20}}>
+							<Button 
+								type="primary" 
+								shape="round" 
+								size="large"
+								disabled = {this.state.selected_champs.size < 5 ? true : false}
+								onClick={this.lock_team.bind(this)}
+							> 
+								Lock In 
+							</Button>
+						</div>
 					</Col>
+
 				</Row>
-				<div style={{margin: 20}}>
-					<Button 
-						type="primary" 
-						shape="round" 
-						size="large"
-						disabled = {this.state.selected_champs.size < 5 ? true : false}
-						onClick={this.lock_team.bind(this)}
-					> 
-						Lock In 
-					</Button>
-				</div>
+
 			</div>
 		)
 	}

@@ -94,7 +94,10 @@ export default class TeamComp {
         }
         let champion_details = champ_info[champion_id];
         return new Champion(
-        	champion_id, champion_details.name, champion_details.win_rates
+        	champion_id, champion_details.name, 
+        	champion_details.win_rates,
+        	champion_details.overall_win_rate,
+      		champion_details.total_games
         )
 
 	}

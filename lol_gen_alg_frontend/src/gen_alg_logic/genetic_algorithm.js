@@ -1,4 +1,3 @@
-import Champion from './champion.js';
 import TeamComp from './team_comp.js';
 import cloneDeep from 'lodash/cloneDeep';
 

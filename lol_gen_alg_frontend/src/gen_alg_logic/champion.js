@@ -1,8 +1,11 @@
 export default class Champion {
-	constructor(id, name, matchups){
+	constructor(id, name, matchups, overall_win_rate, total_games){
 		this.id = id;
 		this.name = name;
 		this.matchups = matchups;
+		this.overall_win_rate = overall_win_rate;
+		this.total_games = total_games;
+
 	}
 
 	check_winrate(id_to_check){

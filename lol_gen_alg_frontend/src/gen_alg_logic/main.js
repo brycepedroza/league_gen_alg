@@ -48,7 +48,11 @@ function create_enemy_team_comp(champion_ids, champ_info){
   let champions = []
   champion_ids.forEach(function(id, index){
     let champion_details = champ_info[id];
-    champions.push(new Champion(id, champion_details.name, champion_details.win_rates));
+    champions.push(new Champion(
+      id, champion_details.name, 
+      champion_details.win_rates,
+      champion_details.overall_win_rate,
+      champion_details.total_games));
   });
   return new TeamComp(champ_info, champions);
 }
@@ -68,15 +72,17 @@ export function full_gen_alg(enemy_ids){
 
   console.log("enemy team");
   enemy_team.champions.forEach(function(champion, index){
-    console.log(champion.id, champion.name);
+    console.log(champion.id, champion.name, champion.total_games);
     console.log("------------------------------------")
   });
 
   console.log("your team");
-  console.log(gen_alg)
   gen_alg.best_individuals[0].champions.forEach(function(champion, index){
     console.log(champion.id, champion.name);
+    console.log(champion.total_games, champion.overall_win_rate);
     console.log(champion.matchups);
     console.log("------------------------------------")
   });
+
+  return gen_alg.best_individuals[0].champions
 }

@@ -2,15 +2,6 @@ import React, { useEffect } from 'react';
 import Champions from './components/champions.js'
 import './App.css'
 
-let gen_alg = require("./gen_alg_logic/main.js");
-
-const ENEMY_TEAM = [
-    "516",
-    "113",
-    "38",
-    "236",
-    "412"
-]
 
 function App() {
 

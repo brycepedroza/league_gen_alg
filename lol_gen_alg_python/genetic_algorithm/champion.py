@@ -19,7 +19,14 @@ class Champion:
         :return: Win rate as a float or None
         """
         champion = self.matchups.get(id_to_check)
-        return champion.get("winrate")/100 * math.log(champion.get("games"), 10) \
-            if champion else None
+        if champion:
+            win_rate = champion.get("winrate")/100
+            log_games = math.log(champion.get("games"), 10)
+            res = win_rate * log_games
+            return res
+        else:
+            return None
+        # return champion.get("winrate")/100 * math.log(champion.get("games"), 10) \
+        #     if champion else None
         # return champion.get("winrate")/100  \
         #     if champion else None

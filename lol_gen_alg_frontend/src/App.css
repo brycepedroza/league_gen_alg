@@ -10,8 +10,38 @@
 	border: 2px red solid;
 }
 
-.champion_box {
+
+
+.champion_select_box {
 	cursor: pointer;
 	text-align: center;
+	margin: 3px;
+}
+
+.your_champions {
+	min-height: 20%;
 	border: 2px red solid;
+}
+
+.champ_select_image {
+	max-width: 100%;
+}
+
+.champ_select {
+	text-align: center;
+	max-height: 800px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+@media only screen and (max-width: 600px){
+	.champ_select {
+		text-align: center;
+		max-height: 300px;
+		overflow-y: scroll;
+		overflow-x: hidden;
+	}
+	.champ_select_image {
+		max-width: 75px;
+	}
 }
