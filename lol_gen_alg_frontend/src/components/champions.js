@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, List, Input, Row, Col} from 'antd';
+import { Button, List, Input, Row, Col, Spin } from 'antd';
 
 let gen_alg = require("../gen_alg_logic/main.js");
 
@@ -39,7 +39,9 @@ export default class ChampionList extends Component{
 		this.state = {
 			available_champs:champion_list,
 			selected_champs: new Set(),
-			returned_champs: []
+			returned_champs: [],
+			loading: false,
+			count:0
 		}
 	}
 
@@ -66,31 +68,50 @@ export default class ChampionList extends Component{
 	}
 
 	lock_team(){
-		let champion_ids = [];
-		for (let item of this.state.selected_champs) champion_ids.push(item.id)
-		this.setState({returned_champs: gen_alg.full_gen_alg(champion_ids)}, () => {console.log(this.state.returned_champs, champion_list)})
+		this.setState({loading: true}, () => {
+			let champion_ids = [];
+			for (let item of this.state.selected_champs) {champion_ids.push(item.id)}
+			this.setState({loading: false, returned_champs: gen_alg.full_gen_alg(champion_ids)})			
+		})	
 	}
 
 
-
 	render(){
+		let spinner;
+		if (this.state.loading) {
+			console.log("I SHOULD SAY LOADING")
+			spinner = <p> LOADING {this.state.count} </p>
+		}
+		else {
+			console.log("I SHOULD NOT SAY LOADING")
+			spinner = <p> NOT LOADING {this.state.count} </p>
+		}
 		return(
 			<div className="box">
+				{spinner}
 				<Input 
 					style={{maxWidth: 400, margin: 10}}
 					placeholder="Search for a Champion"
 					onChange={this.handle_filter.bind(this)}/>
-				<Row>
-					<Col style={{minHeight: "100%"}} className="box" xs={{span:24, order:2}} md={{span:6, order:1}} lg={{span:5, order:1}}>
+
+				<Row gutter={8}>
+
+					<Col style={{minHeight: "100%"}} className="box" xs={{span:24, order:2}} sm={{span:6, order:1}} lg={{span:5, order:1}}>
 					 	{Array.from(this.state.selected_champs).map((champ)=>
-				 			<div className="your_champions" key={champ.id}>
-				 				<p style={{margin:0}}>{champ.name}</p>
-				 				<p style={{margin:0}}>{champ.total_games}</p>
-				 				<p style={{margin:0}}>{champ.overall_win_rate}</p>
-				 			</div>
+				 			<Row className="your_champions" key={champ.id} gutter={4}>
+				 				<Col span={8} className="center_div"> 
+					 				<img className="sidebar_champ_image" src={require('../images/'+champ.name+'.png')}/>
+				 				</Col>
+				 				<Col span={16} className="center_div" style={{textAlign: "left"}}> 
+									<h3 style={{margin:0}}>{champ.name}</h3>
+				 					<p style={{margin:0}}>{champ.total_games}</p>
+				 					<p style={{margin:0}}>{champ.overall_win_rate}</p>				 				
+			 					</Col>
+				 			</Row>
 				 		)}
 					</Col>
-					<Col style={{height: "100%"}} className="box" xs={{span:24, order:1}} md={{span:12, order:2}} lg={{span:14, order:2}}>
+
+					<Col style={{height: "100%"}} className="box" xs={{span:24, order:1}} sm={{span:12, order:2}} lg={{span:14, order:2}}>
 					 	<List className="champ_select"
 						    grid={{
 						      gutter: 0,
@@ -111,19 +132,41 @@ export default class ChampionList extends Component{
 					  	/>
 					</Col>
 
-					<Col style={{height: "100%"}} className="box" xs={{span:24, order:4}} md={{span:6, order:3}} lg={{span:5, order:3}}>
+					<Col style={{minHeight: "100%"}} className="box" xs={{span:24, order:4}} sm={{span:6, order:3}} lg={{span:5, order:3}}>
+					 	{this.state.loading ? <p> loading </p> : <p> loading f </p>}
 					 	{Array.from(this.state.returned_champs).map((champ)=>
-				 			<div className="your_champions" key={champ.id}>
-				 				<p style={{margin:0}}>{champ.name}</p>
-				 				<p style={{margin:0}}>{champ.total_games}</p>
-				 				<p style={{margin:0}}>{champ.overall_win_rate}</p>
-				 				{Object.entries(champ.matchups).map(([id, enemy]) => 
-				 					<p style={{margin:0}} key={id}> {champion_json[id].name}: {enemy.winrate} | {enemy.games}  </p>)}
-			 				</div>
-				 		)}					
+				 			<Row className="your_champions" key={champ.id} gutter={8}>
+
+				 				<Col span={10} className="center_div"> 
+									{Object.entries(champ.matchups).map(([id, enemy]) => 
+										<Row key={id}>
+											<Col span={3}>
+					 							<img className="inline_champ_image" src={require('../images/'+champion_json[id].name+'.png')}/>
+											</Col>
+											<Col span={21}>
+				 								<p style={{margin:0, textAlign: "left"}} key={id}>{enemy.winrate} | {enemy.games}  </p>				 				
+											</Col>
+										</Row>
+									)}
+								</Col>
+
+				 				<Col span={6} className="center_div" style={{textAlign: "right"}}> 
+									<h3 style={{margin:0}}>{champ.name}</h3>
+				 					<p style={{margin:0}}>{champ.total_games}</p>
+				 					<p style={{margin:0}}>{champ.overall_win_rate}</p>				 				
+			 					</Col>
+
+				 				<Col span={8} className="center_div"> 
+					 				<img className="sidebar_champ_image" src={require('../images/'+champ.name+'.png')}/>
+				 				</Col>
+
+				 			</Row>
+				 		)}	
+
 				 	</Col>
 
 					<Col className="box" xs={{span:24, order:3}} md={{span:24, order:4}}>
+
 						<div style={{margin: 20}}>
 							<Button 
 								type="primary" 
@@ -135,6 +178,7 @@ export default class ChampionList extends Component{
 								Lock In 
 							</Button>
 						</div>
+
 					</Col>
 
 				</Row>

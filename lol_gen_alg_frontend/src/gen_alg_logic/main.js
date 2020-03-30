@@ -23,7 +23,6 @@ function filter_champion_information(champion_ids, champ_info) {
 
   // Remove unavailable champions
   let filtered_info = cloneDeep(champion_information);
-  console.log(champion_ids);
   champion_ids.forEach(function(id, index){
     delete filtered_info[id];
   });
@@ -70,19 +69,19 @@ export function full_gen_alg(enemy_ids){
     enemy_team, filtered_champ_info);
   run_gen_alg(gen_alg, NUM_GENERATIONS);
 
-  console.log("enemy team");
-  enemy_team.champions.forEach(function(champion, index){
-    console.log(champion.id, champion.name, champion.total_games);
-    console.log("------------------------------------")
-  });
+  // console.log("enemy team");
+  // enemy_team.champions.forEach(function(champion, index){
+  //   console.log(champion.id, champion.name, champion.total_games);
+  //   console.log("------------------------------------")
+  // });
 
-  console.log("your team");
-  gen_alg.best_individuals[0].champions.forEach(function(champion, index){
-    console.log(champion.id, champion.name);
-    console.log(champion.total_games, champion.overall_win_rate);
-    console.log(champion.matchups);
-    console.log("------------------------------------")
-  });
+  // console.log("your team");
+  // gen_alg.best_individuals[0].champions.forEach(function(champion, index){
+  //   console.log(champion.id, champion.name);
+  //   console.log(champion.total_games, champion.overall_win_rate);
+  //   console.log(champion.matchups);
+  //   console.log("------------------------------------")
+  // });
 
   return gen_alg.best_individuals[0].champions
 }

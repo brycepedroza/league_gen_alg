@@ -4,13 +4,10 @@
   text-align: center;
 }
 
-
 .box {
 	text-align: center;
-	border: 2px red solid;
+	/*border: 2px red solid;*/
 }
-
-
 
 .champion_select_box {
 	cursor: pointer;
@@ -20,7 +17,7 @@
 
 .your_champions {
 	min-height: 20%;
-	border: 2px red solid;
+	/*border: 2px red solid;*/
 }
 
 .champ_select_image {
@@ -34,14 +31,32 @@
 	overflow-x: hidden;
 }
 
+.inline_champ_image {
+	max-width: 100%;
+}
+
+.sidebar_champ_image {
+	max-width: 100%;
+}
+
+
+.center_div {
+	display: block;
+	margin: auto;
+}
+
 @media only screen and (max-width: 600px){
 	.champ_select {
 		text-align: center;
-		max-height: 300px;
+		max-height: 350px;
 		overflow-y: scroll;
 		overflow-x: hidden;
 	}
 	.champ_select_image {
 		max-width: 75px;
 	}
+	.sidebar_champ_image {
+		max-width: 100px;
+	}
+
 }
