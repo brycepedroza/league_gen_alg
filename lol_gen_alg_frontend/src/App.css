@@ -26,7 +26,7 @@
 
 .champ_select {
 	text-align: center;
-	max-height: 800px;
+	max-height: 600px;
 	overflow-y: scroll;
 	overflow-x: hidden;
 }
@@ -35,10 +35,15 @@
 	max-width: 100%;
 }
 
-.sidebar_champ_image {
+.sidebar_enemy_champ_image, .sidebar_your_champ_image {
+  padding: 3px;
 	max-width: 100%;
 }
 
+.champion_input{
+  max-width: 400px;
+  margin: 10px;
+}
 
 .center_div {
 	display: block;
@@ -46,6 +51,8 @@
 }
 
 @media only screen and (max-width: 600px){
+
+
 	.champ_select {
 		text-align: center;
 		max-height: 350px;
@@ -55,8 +62,11 @@
 	.champ_select_image {
 		max-width: 75px;
 	}
-	.sidebar_champ_image {
+	.sidebar_your_champ_image {
 		max-width: 100px;
 	}
 
+  .champion_input {
+    margin: 0px;
+  }
 }
