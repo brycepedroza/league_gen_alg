@@ -7,7 +7,7 @@ logger = logging.getLogger()
 
 
 class TeamComp:
-    def __init__(self, champion_information: dict, champions: [Champion],
+    def __init__(self, champion_information: dict, champions: [Champion], meta=True,
                  mutation_rate=0.9):
         """
         Create a new team comp. Champions either supplied or list of avilable
@@ -19,7 +19,10 @@ class TeamComp:
         if champions:
             self.champions = champions
         else:
-            self.champions = TeamComp.generate_team_comp(champion_information)
+            if meta:
+                self.champions = TeamComp.generate_meta_team_comp(champion_information)
+            else:
+                self.champions = TeamComp.generate_team_comp(champion_information)
         self.fitness = -1
         self.mutation_rate = mutation_rate
 
@@ -38,7 +41,7 @@ class TeamComp:
             index = random.randint(0, 4)
             current_champion_ids = [x.id for x in self.champions]
             new_champion = TeamComp.make_new_champion(
-                available_champions, current_champion_ids)
+                available_champions, current_champion_ids, index=index)
 
             logger.debug(f"Replacing individual {individual}'s "
                          f"{self.champions[index].name} with {new_champion.name}")
@@ -87,18 +90,72 @@ class TeamComp:
         return champions
 
     @staticmethod
-    def make_new_champion(champion_details: dict, current_ids: list) -> Champion:
+    def generate_meta_team_comp(champion_details: dict) -> [Champion]:
+        """
+        Performs the same as generate team comp but ensures that
+        the a meta team comp is made
+        0: top
+        1: jungle
+        2: mid
+        3: adc
+        4: support
+        """
+        champions = []
+        ids_chosen = []
+        # i maps to the positions above
+        for i in range(5):
+            new_champion = TeamComp.make_new_champion(champion_details, ids_chosen, index=i)
+            champions.append(new_champion)
+            ids_chosen.append(new_champion.id)
+        return champions
+
+    @staticmethod
+    def make_new_champion(champion_details: dict, current_ids: list, index=-1) -> Champion:
         """
         Make a new RANDOM champion
         :param current_ids: Current IDs
         :param champion_details: Dict containing all mactchup information for all champions
+        :param index: Optional param when making meta team comp. random champion must have
+        that associated role
         :return: A new champion
         """
         # Make sure champion selected isn't in the list of current champions
         champion_id = random.choice(list(champion_details))
-        while champion_id in current_ids and len(current_ids) > 0:
-            champion_id = random.choice(list(champion_details))
+        if index == -1:
+            while champion_id in current_ids and len(current_ids) > 0:
+                champion_id = random.choice(list(champion_details))
+        else:
+            while champion_id in current_ids and len(current_ids) > 0 or \
+                    not _valid_role(champion_details, champion_id, index):
+                champion_id = random.choice(list(champion_details))
         champion_details = champion_details.get(champion_id)
         return Champion(
             champion_id, champion_details.get("name"),
-            champion_details.get("win_rates"))
+            champion_details.get("win_rates"),
+        )
+
+
+def _valid_role(champion_details: dict, champion_id, role_index):
+    """
+    :param champion_details: Dict containing all mactchup information for all champions
+    :param champion_id: ID of champion we are checking
+    :param role_index: maps to meta roles in league
+    0: top
+    1: jungle
+    2: mid
+    3: adc
+    4: support
+    returns true if the champion has that role, else false
+    """
+    role_dict = {
+        0: "top",
+        1: "jungle",
+        2: "mid",
+        3: "adc",
+        4: "support"
+    }
+    role_name = role_dict[role_index]
+    champion_details = champion_details.get(champion_id)
+    champion_roles = champion_details['roles']
+    return True if role_name in champion_roles else False
+

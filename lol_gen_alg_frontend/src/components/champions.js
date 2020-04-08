@@ -91,19 +91,19 @@ export default class ChampionList extends Component{
 		return(
 			<div className="box">
 				<Input
-          className="champion_input"
+          			className="champion_input"
 					placeholder="Search for a Champion"
 					onChange={this.handle_filter.bind(this)}/>
 
-				<Row gutter={0}>
+				<Row gutter={5}>
 
 					<Col style={{minHeight: "100%"}} className="box" xs={{span:24, order:2}} sm={{span:6, order:1}} lg={{span:6, order:1}}>
 					 	{Array.from(this.state.selected_champs).map((champ)=>
-				 			<Row className="your_champions" key={champ.id} gutter={8}>
-				 				<Col span={8} className="center_div">
+				 			<Row className="your_champions" key={champ.id} gutter={5}>
+				 				<Col span={5} className="center_div">
 					 				<img className="sidebar_your_champ_image" src={require('../images/'+champ.name+'.png')}/>
 				 				</Col>
-				 				<Col span={16} className="center_div" style={{textAlign: "left"}}>
+				 				<Col span={19} className="center_div" style={{textAlign: "left"}}>
 									<h3 style={{margin:0}}>{champ.name}</h3>
 				 					<p style={{margin:0}}>{champ.total_games}</p>
 				 					<p style={{margin:0}}>{champ.overall_win_rate}</p>
@@ -113,28 +113,37 @@ export default class ChampionList extends Component{
 					</Col>
 
 					<Col style={{minHeight: "100%"}} className="box" xs={{span:24, order:1}} sm={{span:10, order:2}} lg={{span:12, order:2}}>
-            <div className="center_div">
-              <List className="champ_select"
-  						    grid={{
-  						      gutter: 0,
-  						      xs: 3,
-  						      sm: 3,
-  						      md: 4,
-  						      lg: 5,
-  						      xl: 5,
-  						      xxl: 6,
-  						    }}
-  						    dataSource={this.state.available_champs}
-  						    renderItem={item => (
-  					      		<List.Item className="champion_select_box" onClick={this.select_champion.bind(this, item)}>
-  					 				<img className="champ_select_image" src={require('../images/'+item.name+'.png')}/>
-  				      				<p>{item.name}</p>
-  					      		</List.Item>
-  						    )}
-  					  	/>
-            </div>
-
-
+			            <div className="center_div">
+			              <List className="champ_select"
+	  						    grid={{
+	  						      gutter: 0,
+	  						      xs: 3,
+	  						      sm: 3,
+	  						      md: 4,
+	  						      lg: 5,
+	  						      xl: 5,
+	  						      xxl: 6,
+	  						    }}
+	  						    dataSource={this.state.available_champs}
+	  						    renderItem={item => (
+	  					      		<List.Item className="champion_select_box" onClick={this.select_champion.bind(this, item)}>
+	  					 				<img className="champ_select_image" src={require('../images/'+item.name+'.png')}/>
+	  				      				<p>{item.name}</p>
+	  					      		</List.Item>
+	  						    )}
+	  					  	/>
+							<div style={{margin: 20}}>
+								<Button
+									type="primary"
+									shape="round"
+									size="large"
+									disabled = {this.state.selected_champs.size < 5 ? true : false}
+									onClick={this.lock_team.bind(this)}
+								>
+									Lock In
+								</Button>
+							</div>
+			            </div>
 					</Col>
 
           { this.state.loading?
@@ -144,11 +153,11 @@ export default class ChampionList extends Component{
             :
             <Col style={{minHeight: "100%"}} className="box" xs={{span:24, order:4}} sm={{span:8, order:3}} lg={{span:6, order:3}}>
               {Array.from(this.state.returned_champs).map((champ)=>
-                <Row className="your_champions" key={champ.id} gutter={8}>
+                <Row className="your_champions" key={champ.id} gutter={2}>
 
                   <Col span={12} className="center_div">
                     {Object.entries(champ.matchups).map(([id, enemy]) =>
-                      <Row key={id} gutter={2}>
+                      <Row key={id} gutter={5}>
                         <Col span={3}>
                           <img className="inline_champ_image" src={require('../images/'+champion_json[id].name+'.png')}/>
                         </Col>
@@ -173,23 +182,6 @@ export default class ChampionList extends Component{
               )}
             </Col>
           }
-
-
-					<Col className="box" xs={{span:24, order:3}} md={{span:24, order:4}}>
-
-						<div style={{margin: 20}}>
-							<Button
-								type="primary"
-								shape="round"
-								size="large"
-								disabled = {this.state.selected_champs.size < 5 ? true : false}
-								onClick={this.lock_team.bind(this)}
-							>
-								Lock In
-							</Button>
-						</div>
-
-					</Col>
 
 				</Row>
 

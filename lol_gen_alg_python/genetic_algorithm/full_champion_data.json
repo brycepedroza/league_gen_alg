@@ -1,7 +1,7 @@
 {
-  
   "266": {
     "name": "Aatrox",
+    "roles": ["top", "jungle"],
     "win_rates": {
       "1": {
         "winrate": 40.38,
@@ -515,10 +515,13 @@
         "winrate": 44.29,
         "games": 1217
       }
-    }
+    },
+    "total_games": 21149,
+    "overall_win_rate": 45.3
   },
   "103": {
     "name": "Ahri",
+    "roles": ["mid"],
     "win_rates": {
       "1": {
         "winrate": 48.8,
@@ -992,10 +995,13 @@
         "winrate": 50.2,
         "games": 247
       }
-    }
+    },
+    "total_games": 22304,
+    "overall_win_rate": 51.19
   },
   "84": {
     "name": "Akali",
+    "roles": ["top", "mid"],
     "win_rates": {
       "1": {
         "winrate": 33.33,
@@ -1393,10 +1399,13 @@
         "winrate": 41.92,
         "games": 229
       }
-    }
+    },
+    "total_games": 8721,
+    "overall_win_rate": 41.43
   },
   "12": {
     "name": "Alistar",
+    "roles": ["support"],
     "win_rates": {
       "1": {
         "winrate": 62.5,
@@ -1642,10 +1651,13 @@
         "winrate": 53.57,
         "games": 28
       }
-    }
+    },
+    "total_games": 8173,
+    "overall_win_rate": 48.9
   },
   "32": {
     "name": "Amumu",
+    "roles": ["jungle"],
     "win_rates": {
       "2": {
         "winrate": 46.71,
@@ -1927,10 +1939,13 @@
         "winrate": 42.25,
         "games": 284
       }
-    }
+    },
+    "total_games": 10887,
+    "overall_win_rate": 51.03
   },
   "34": {
     "name": "Anivia",
+    "roles": ["mid"],
     "win_rates": {
       "1": {
         "winrate": 56.52,
@@ -2348,10 +2363,13 @@
         "winrate": 46.67,
         "games": 90
       }
-    }
+    },
+    "total_games": 7920,
+    "overall_win_rate": 49.9
   },
   "1": {
     "name": "Annie",
+    "roles": ["mid"],
     "win_rates": {
       "3": {
         "winrate": 48.75,
@@ -2801,10 +2819,13 @@
         "winrate": 42.17,
         "games": 83
       }
-    }
+    },
+    "total_games": 9627,
+    "overall_win_rate": 50.93
   },
   "523": {
     "name": "Aphelios",
+    "roles": ["adc"],
     "win_rates": {
       "1": {
         "winrate": 32.14,
@@ -3270,10 +3291,13 @@
         "winrate": 36.36,
         "games": 33
       }
-    }
+    },
+    "total_games": 38079,
+    "overall_win_rate": 48.78
   },
   "22": {
     "name": "Ashe",
+    "roles": ["adc"],
     "win_rates": {
       "1": {
         "winrate": 66.67,
@@ -3639,10 +3663,13 @@
         "winrate": 61.9,
         "games": 21
       }
-    }
+    },
+    "total_games": 31330,
+    "overall_win_rate": 52.27
   },
   "136": {
     "name": "AurelionSol",
+    "roles": ["mid"],
     "win_rates": {
       "1": {
         "winrate": 51.16,
@@ -3908,10 +3935,13 @@
         "winrate": 43.9,
         "games": 41
       }
-    }
+    },
+    "total_games": 2965,
+    "overall_win_rate": 52.65
   },
   "268": {
     "name": "Azir",
+    "roles": ["mid"],
     "win_rates": {
       "1": {
         "winrate": 42.86,
@@ -4273,10 +4303,13 @@
         "winrate": 50,
         "games": 80
       }
-    }
+    },
+    "total_games": 6093,
+    "overall_win_rate": 46.33
   },
   "432": {
     "name": "Bard",
+    "roles": ["support"],
     "win_rates": {
       "1": {
         "winrate": 50,
@@ -4658,10 +4691,13 @@
         "winrate": 47.73,
         "games": 44
       }
-    }
+    },
+    "total_games": 19053,
+    "overall_win_rate": 52.01
   },
   "53": {
     "name": "Blitzcrank",
+    "roles": ["support"],
     "win_rates": {
       "1": {
         "winrate": 61.29,
@@ -5099,10 +5135,13 @@
         "winrate": 55.56,
         "games": 63
       }
-    }
+    },
+    "total_games": 29940,
+    "overall_win_rate": 52.65
   },
   "63": {
     "name": "Brand",
+    "roles": ["support", "mid"],
     "win_rates": {
       "1": {
         "winrate": 47.37,
@@ -5604,10 +5643,13 @@
         "winrate": 53.45,
         "games": 58
       }
-    }
+    },
+    "total_games": 21362,
+    "overall_win_rate": 50.98
   },
   "201": {
     "name": "Braum",
+    "roles": ["support"],
     "win_rates": {
       "1": {
         "winrate": 52,
@@ -5869,10 +5911,13 @@
         "winrate": 31.58,
         "games": 19
       }
-    }
+    },
+    "total_games": 11147,
+    "overall_win_rate": 47.53
   },
   "51": {
     "name": "Caitlyn",
+    "roles": ["adc"],
     "win_rates": {
       "1": {
         "winrate": 43.75,
@@ -6366,10 +6411,13 @@
         "winrate": 53.13,
         "games": 64
       }
-    }
+    },
+    "total_games": 53934,
+    "overall_win_rate": 49.05
   },
   "164": {
     "name": "Camille",
+    "roles": ["top", "jungle"],
     "win_rates": {
       "1": {
         "winrate": 47.22,
@@ -6827,10 +6875,13 @@
         "winrate": 42.4,
         "games": 559
       }
-    }
+    },
+    "total_games": 11224,
+    "overall_win_rate": 48.21
   },
   "69": {
     "name": "Cassiopeia",
+    "roles": ["mid", "top"],
     "win_rates": {
       "1": {
         "winrate": 45.39,
@@ -7292,10 +7343,13 @@
         "winrate": 44.38,
         "games": 178
       }
-    }
+    },
+    "total_games": 13311,
+    "overall_win_rate": 51.35
   },
   "31": {
     "name": "Chogath",
+    "roles": ["top", "mid"],
     "win_rates": {
       "1": {
         "winrate": 53.06,
@@ -7853,10 +7907,13 @@
         "winrate": 45.8,
         "games": 417
       }
-    }
+    },
+    "total_games": 12798,
+    "overall_win_rate": 48.79
   },
   "42": {
     "name": "Corki",
+    "roles": ["adc", "mid"],
     "win_rates": {
       "1": {
         "winrate": 46.88,
@@ -8150,10 +8207,13 @@
         "winrate": 50,
         "games": 30
       }
-    }
+    },
+    "total_games": 3329,
+    "overall_win_rate": 46.26
   },
   "122": {
     "name": "Darius",
+    "roles": ["top", "jungle"],
     "win_rates": {
       "1": {
         "winrate": 45.31,
@@ -8687,10 +8747,13 @@
         "winrate": 49.19,
         "games": 2586
       }
-    }
+    },
+    "total_games": 41820,
+    "overall_win_rate": 50.95
   },
   "131": {
     "name": "Diana",
+    "roles": ["mid", "jungle", "top"],
     "win_rates": {
       "1": {
         "winrate": 53.9,
@@ -9264,10 +9327,13 @@
         "winrate": 48.82,
         "games": 422
       }
-    }
+    },
+    "total_games": 34324,
+    "overall_win_rate": 52.08
   },
   "119": {
     "name": "Draven",
+    "roles": ["adc"],
     "win_rates": {
       "3": {
         "winrate": 38.46,
@@ -9633,10 +9699,13 @@
         "winrate": 47.06,
         "games": 34
       }
-    }
+    },
+    "total_games": 13703,
+    "overall_win_rate": 49.19
   },
   "36": {
     "name": "DrMundo",
+    "roles": ["top", "jungle"],
     "win_rates": {
       "1": {
         "winrate": 33.33,
@@ -10094,10 +10163,13 @@
         "winrate": 51.48,
         "games": 439
       }
-    }
+    },
+    "total_games": 12775,
+    "overall_win_rate": 52.23
   },
   "245": {
     "name": "Ekko",
+    "roles": ["mid", "jungle", "top"],
     "win_rates": {
       "1": {
         "winrate": 50.24,
@@ -10667,10 +10739,13 @@
         "winrate": 48.61,
         "games": 792
       }
-    }
+    },
+    "total_games": 44176,
+    "overall_win_rate": 51.44
   },
   "60": {
     "name": "Elise",
+    "roles": ["jungle"],
     "win_rates": {
       "2": {
         "winrate": 46.96,
@@ -11000,10 +11075,13 @@
         "winrate": 43.06,
         "games": 490
       }
-    }
+    },
+    "total_games": 24807,
+    "overall_win_rate": 48.57
   },
   "28": {
     "name": "Evelynn",
+    "roles": ["jungle"],
     "win_rates": {
       "2": {
         "winrate": 51.3,
@@ -11217,10 +11295,13 @@
         "winrate": 43.69,
         "games": 206
       }
-    }
+    },
+    "total_games": 9021,
+    "overall_win_rate": 48.62
   },
   "81": {
     "name": "Ezreal",
+    "roles": ["adc"],
     "win_rates": {
       "1": {
         "winrate": 30,
@@ -11758,10 +11839,13 @@
         "winrate": 43.42,
         "games": 76
       }
-    }
+    },
+    "total_games": 60943,
+    "overall_win_rate": 48.9
   },
   "9": {
     "name": "Fiddlesticks",
+    "roles": ["jungle"],
     "win_rates": {
       "1": {
         "winrate": 50,
@@ -12191,10 +12275,13 @@
         "winrate": 50.77,
         "games": 65
       }
-    }
+    },
+    "total_games": 7338,
+    "overall_win_rate": 49.17
   },
   "114": {
     "name": "Fiora",
+    "roles": ["top"],
     "win_rates": {
       "1": {
         "winrate": 52.78,
@@ -12660,10 +12747,13 @@
         "winrate": 46.91,
         "games": 1424
       }
-    }
+    },
+    "total_games": 20834,
+    "overall_win_rate": 50.01
   },
   "105": {
     "name": "Fizz",
+    "roles": ["mid"],
     "win_rates": {
       "1": {
         "winrate": 50.91,
@@ -13185,10 +13275,13 @@
         "winrate": 50.6,
         "games": 251
       }
-    }
+    },
+    "total_games": 25221,
+    "overall_win_rate": 52.33
   },
   "3": {
     "name": "Galio",
+    "roles": ["mid", "support"],
     "win_rates": {
       "1": {
         "winrate": 47.67,
@@ -13618,10 +13711,13 @@
         "winrate": 43.24,
         "games": 74
       }
-    }
+    },
+    "total_games": 8847,
+    "overall_win_rate": 47.74
   },
   "41": {
     "name": "Gangplank",
+    "roles": ["top", "mid"],
     "win_rates": {
       "1": {
         "winrate": 41.18,
@@ -14035,10 +14131,13 @@
         "winrate": 46.85,
         "games": 683
       }
-    }
+    },
+    "total_games": 11532,
+    "overall_win_rate": 48.08
   },
   "86": {
     "name": "Garen",
+    "roles": ["top", "mid"],
     "win_rates": {
       "1": {
         "winrate": 48,
@@ -14564,10 +14663,13 @@
         "winrate": 50.03,
         "games": 1615
       }
-    }
+    },
+    "total_games": 27552,
+    "overall_win_rate": 50.15
   },
   "150": {
     "name": "Gnar",
+    "roles": ["top", "jungle"],
     "win_rates": {
       "1": {
         "winrate": 50,
@@ -14905,10 +15007,13 @@
         "winrate": 47.41,
         "games": 464
       }
-    }
+    },
+    "total_games": 7001,
+    "overall_win_rate": 48.08
   },
   "79": {
     "name": "Gragas",
+    "roles": ["jungle"],
     "win_rates": {
       "2": {
         "winrate": 46.6,
@@ -15326,10 +15431,13 @@
         "winrate": 44.62,
         "games": 195
       }
-    }
+    },
+    "total_games": 9308,
+    "overall_win_rate": 45.86
   },
   "104": {
     "name": "Graves",
+    "roles": ["jungle"],
     "win_rates": {
       "1": {
         "winrate": 58.82,
@@ -15775,10 +15883,13 @@
         "winrate": 46.14,
         "games": 505
       }
-    }
+    },
+    "total_games": 21548,
+    "overall_win_rate": 50.05
   },
   "120": {
     "name": "Hecarim",
+    "roles": ["top", "jungle"],
     "win_rates": {
       "2": {
         "winrate": 48.33,
@@ -16056,10 +16167,13 @@
         "winrate": 39.51,
         "games": 205
       }
-    }
+    },
+    "total_games": 9159,
+    "overall_win_rate": 49.84
   },
   "74": {
     "name": "Heimerdinger",
+    "roles": ["top", "mid"],
     "win_rates": {
       "1": {
         "winrate": 47.37,
@@ -16501,10 +16615,13 @@
         "winrate": 53.27,
         "games": 107
       }
-    }
+    },
+    "total_games": 6663,
+    "overall_win_rate": 50.76
   },
   "420": {
     "name": "Illaoi",
+    "roles": ["top"],
     "win_rates": {
       "1": {
         "winrate": 64.29,
@@ -16858,10 +16975,13 @@
         "winrate": 50.07,
         "games": 741
       }
-    }
+    },
+    "total_games": 9370,
+    "overall_win_rate": 50.4
   },
   "39": {
     "name": "Irelia",
+    "roles": ["top", "mid"],
     "win_rates": {
       "1": {
         "winrate": 34.29,
@@ -17355,10 +17475,13 @@
         "winrate": 46.61,
         "games": 708
       }
-    }
+    },
+    "total_games": 18265,
+    "overall_win_rate": 45.08
   },
   "427": {
     "name": "Ivern",
+    "roles": ["jungle"],
     "win_rates": {
       "2": {
         "winrate": 52.89,
@@ -17560,10 +17683,13 @@
         "winrate": 37.14,
         "games": 70
       }
-    }
+    },
+    "total_games": 3131,
+    "overall_win_rate": 49.57
   },
   "40": {
     "name": "Janna",
+    "roles": ["support"],
     "win_rates": {
       "1": {
         "winrate": 44.44,
@@ -17889,10 +18015,13 @@
         "winrate": 56.67,
         "games": 30
       }
-    }
+    },
+    "total_games": 16433,
+    "overall_win_rate": 51.06
   },
   "59": {
     "name": "JarvanIV",
+    "roles": ["top", "jungle"],
     "win_rates": {
       "2": {
         "winrate": 50.93,
@@ -18338,10 +18467,13 @@
         "winrate": 50.48,
         "games": 628
       }
-    }
+    },
+    "total_games": 25517,
+    "overall_win_rate": 50.25
   },
   "24": {
     "name": "Jax",
+    "roles": ["top", "jungle"],
     "win_rates": {
       "1": {
         "winrate": 58.33,
@@ -18875,10 +19007,13 @@
         "winrate": 49.33,
         "games": 1267
       }
-    }
+    },
+    "total_games": 30611,
+    "overall_win_rate": 50.03
   },
   "126": {
     "name": "Jayce",
+    "roles": ["top", "mid"],
     "win_rates": {
       "1": {
         "winrate": 61.9,
@@ -19208,10 +19343,13 @@
         "winrate": 47.47,
         "games": 158
       }
-    }
+    },
+    "total_games": 4397,
+    "overall_win_rate": 47.15
   },
   "202": {
     "name": "Jhin",
+    "roles": ["adc"],
     "win_rates": {
       "1": {
         "winrate": 56.41,
@@ -19741,10 +19879,13 @@
         "winrate": 53.52,
         "games": 71
       }
-    }
+    },
+    "total_games": 50658,
+    "overall_win_rate": 51.25
   },
   "222": {
     "name": "Jinx",
+    "roles": ["adc"],
     "win_rates": {
       "1": {
         "winrate": 40.63,
@@ -20206,10 +20347,13 @@
         "winrate": 27.27,
         "games": 22
       }
-    }
+    },
+    "total_games": 36785,
+    "overall_win_rate": 50.7
   },
   "145": {
     "name": "Kaisa",
+    "roles": ["adc"],
     "win_rates": {
       "1": {
         "winrate": 60,
@@ -20691,10 +20835,13 @@
         "winrate": 54.55,
         "games": 33
       }
-    }
+    },
+    "total_games": 30927,
+    "overall_win_rate": 46.07
   },
   "429": {
     "name": "Kalista",
+    "roles": ["top", "adc"],
     "win_rates": {
       "4": {
         "winrate": 60,
@@ -20852,10 +20999,13 @@
         "winrate": 55,
         "games": 20
       }
-    }
+    },
+    "total_games": 4442,
+    "overall_win_rate": 49.93
   },
   "43": {
     "name": "Karma",
+    "roles": ["support", "mid"],
     "win_rates": {
       "1": {
         "winrate": 54.76,
@@ -21317,10 +21467,13 @@
         "winrate": 48.85,
         "games": 131
       }
-    }
+    },
+    "total_games": 11846,
+    "overall_win_rate": 49.19
   },
   "30": {
     "name": "Karthus",
+    "roles": ["mid", "jungle"],
     "win_rates": {
       "1": {
         "winrate": 40,
@@ -21730,10 +21883,13 @@
         "winrate": 46.54,
         "games": 217
       }
-    }
+    },
+    "total_games": 9760,
+    "overall_win_rate": 47.48
   },
   "38": {
     "name": "Kassadin",
+    "roles": ["mid"],
     "win_rates": {
       "1": {
         "winrate": 57.99,
@@ -22219,10 +22375,13 @@
         "winrate": 50.24,
         "games": 209
       }
-    }
+    },
+    "total_games": 21529,
+    "overall_win_rate": 50.71
   },
   "55": {
     "name": "Katarina",
+    "roles": ["mid"],
     "win_rates": {
       "1": {
         "winrate": 50.45,
@@ -22700,10 +22859,13 @@
         "winrate": 47.79,
         "games": 226
       }
-    }
+    },
+    "total_games": 21488,
+    "overall_win_rate": 49.41
   },
   "10": {
     "name": "Kayle",
+    "roles": ["mid", "top"],
     "win_rates": {
       "1": {
         "winrate": 57.14,
@@ -23157,10 +23319,13 @@
         "winrate": 52.25,
         "games": 712
       }
-    }
+    },
+    "total_games": 12104,
+    "overall_win_rate": 51.47
   },
   "141": {
     "name": "Kayn",
+    "roles": ["jungle"],
     "win_rates": {
       "2": {
         "winrate": 50.77,
@@ -23466,10 +23631,13 @@
         "winrate": 48.24,
         "games": 512
       }
-    }
+    },
+    "total_games": 20592,
+    "overall_win_rate": 49.71
   },
   "85": {
     "name": "Kennen",
+    "roles": ["top"],
     "win_rates": {
       "1": {
         "winrate": 40,
@@ -23855,10 +24023,13 @@
         "winrate": 47.45,
         "games": 274
       }
-    }
+    },
+    "total_games": 5856,
+    "overall_win_rate": 49.68
   },
   "121": {
     "name": "Khazix",
+    "roles": ["jungle"],
     "win_rates": {
       "2": {
         "winrate": 50.42,
@@ -24172,10 +24343,13 @@
         "winrate": 49.57,
         "games": 583
       }
-    }
+    },
+    "total_games": 27166,
+    "overall_win_rate": 49.78
   },
   "203": {
     "name": "Kindred",
+    "roles": ["jungle"],
     "win_rates": {
       "2": {
         "winrate": 47.26,
@@ -24429,10 +24603,13 @@
         "winrate": 43.22,
         "games": 199
       }
-    }
+    },
+    "total_games": 8503,
+    "overall_win_rate": 47.3
   },
   "240": {
     "name": "Kled",
+    "roles": ["top", "mid"],
     "win_rates": {
       "1": {
         "winrate": 50,
@@ -24862,10 +25039,13 @@
         "winrate": 48.74,
         "games": 634
       }
-    }
+    },
+    "total_games": 9717,
+    "overall_win_rate": 51.42
   },
   "96": {
     "name": "KogMaw",
+    "roles": ["adc"],
     "win_rates": {
       "7": {
         "winrate": 53.33,
@@ -25043,10 +25223,13 @@
         "winrate": 41.18,
         "games": 17
       }
-    }
+    },
+    "total_games": 3846,
+    "overall_win_rate": 50.05
   },
   "7": {
     "name": "Leblanc",
+    "roles": ["mid"],
     "win_rates": {
       "1": {
         "winrate": 41.73,
@@ -25532,10 +25715,13 @@
         "winrate": 46.41,
         "games": 181
       }
-    }
+    },
+    "total_games": 18874,
+    "overall_win_rate": 47.73
   },
   "64": {
     "name": "LeeSin",
+    "roles": ["jungle"],
     "win_rates": {
       "1": {
         "winrate": 41.67,
@@ -25981,10 +26167,13 @@
         "winrate": 43.85,
         "games": 1236
       }
-    }
+    },
+    "total_games": 55119,
+    "overall_win_rate": 47.3
   },
   "89": {
     "name": "Leona",
+    "roles": ["support"],
     "win_rates": {
       "1": {
         "winrate": 42.7,
@@ -26434,10 +26623,13 @@
         "winrate": 45.98,
         "games": 87
       }
-    }
+    },
+    "total_games": 37981,
+    "overall_win_rate": 50.56
   },
   "127": {
     "name": "Lissandra",
+    "roles": ["mid"],
     "win_rates": {
       "1": {
         "winrate": 44.87,
@@ -26831,10 +27023,13 @@
         "winrate": 46.51,
         "games": 86
       }
-    }
+    },
+    "total_games": 6386,
+    "overall_win_rate": 48.56
   },
   "236": {
     "name": "Lucian",
+    "roles": ["top", "adc"],
     "win_rates": {
       "1": {
         "winrate": 46.67,
@@ -27372,10 +27567,13 @@
         "winrate": 44.4,
         "games": 268
       }
-    }
+    },
+    "total_games": 50002,
+    "overall_win_rate": 48.47
   },
   "117": {
     "name": "Lulu",
+    "roles": ["support"],
     "win_rates": {
       "1": {
         "winrate": 56.52,
@@ -27801,10 +27999,13 @@
         "winrate": 56.14,
         "games": 57
       }
-    }
+    },
+    "total_games": 17690,
+    "overall_win_rate": 50.69
   },
   "99": {
     "name": "Lux",
+    "roles": ["mid", "support"],
     "win_rates": {
       "1": {
         "winrate": 48.68,
@@ -28318,10 +28519,13 @@
         "winrate": 52.35,
         "games": 149
       }
-    }
+    },
+    "total_games": 33318,
+    "overall_win_rate": 49.03
   },
   "54": {
     "name": "Malphite",
+    "roles": ["top"],
     "win_rates": {
       "1": {
         "winrate": 44.59,
@@ -28891,10 +29095,13 @@
         "winrate": 50.12,
         "games": 824
       }
-    }
+    },
+    "total_games": 23051,
+    "overall_win_rate": 50.25
   },
   "90": {
     "name": "Malzahar",
+    "roles": ["mid"],
     "win_rates": {
       "1": {
         "winrate": 55.17,
@@ -29348,10 +29555,13 @@
         "winrate": 47.67,
         "games": 193
       }
-    }
+    },
+    "total_games": 15439,
+    "overall_win_rate": 51.44
   },
   "57": {
     "name": "Maokai",
+    "roles": ["top", "jungle"],
     "win_rates": {
       "1": {
         "winrate": 40,
@@ -29813,10 +30023,13 @@
         "winrate": 50,
         "games": 208
       }
-    }
+    },
+    "total_games": 5300,
+    "overall_win_rate": 51.91
   },
   "11": {
     "name": "MasterYi",
+    "roles": ["jungle"],
     "win_rates": {
       "1": {
         "winrate": 50,
@@ -30262,10 +30475,13 @@
         "winrate": 51.34,
         "games": 785
       }
-    }
+    },
+    "total_games": 32740,
+    "overall_win_rate": 52.42
   },
   "21": {
     "name": "MissFortune",
+    "roles": ["adc"],
     "win_rates": {
       "1": {
         "winrate": 54.76,
@@ -30787,10 +31003,13 @@
         "winrate": 52.83,
         "games": 53
       }
-    }
+    },
+    "total_games": 63136,
+    "overall_win_rate": 51.79
   },
   "62": {
-    "name": "MonkeyKing",
+    "name": "Wukong",
+    "roles": ["top", "jungle"],
     "win_rates": {
       "1": {
         "winrate": 56.1,
@@ -31324,10 +31543,13 @@
         "winrate": 49.16,
         "games": 179
       }
-    }
+    },
+    "total_games": 7634,
+    "overall_win_rate": 52.08
   },
   "82": {
     "name": "Mordekaiser",
+    "roles": ["top", "mid"],
     "win_rates": {
       "1": {
         "winrate": 51.28,
@@ -31881,10 +32103,13 @@
         "winrate": 50.78,
         "games": 1930
       }
-    }
+    },
+    "total_games": 32123,
+    "overall_win_rate": 49.99
   },
   "25": {
     "name": "Morgana",
+    "roles": ["mid", "support"],
     "win_rates": {
       "1": {
         "winrate": 41.75,
@@ -32382,10 +32607,13 @@
         "winrate": 52.05,
         "games": 73
       }
-    }
+    },
+    "total_games": 28176,
+    "overall_win_rate": 48.91
   },
   "267": {
     "name": "Nami",
+    "roles": ["support"],
     "win_rates": {
       "1": {
         "winrate": 50,
@@ -32767,10 +32995,13 @@
         "winrate": 52.83,
         "games": 53
       }
-    }
+    },
+    "total_games": 34809,
+    "overall_win_rate": 53.11
   },
   "75": {
     "name": "Nasus",
+    "roles": ["top"],
     "win_rates": {
       "1": {
         "winrate": 55.56,
@@ -33212,10 +33443,13 @@
         "winrate": 50.58,
         "games": 951
       }
-    }
+    },
+    "total_games": 16371,
+    "overall_win_rate": 50.47
   },
   "111": {
     "name": "Nautilus",
+    "roles": ["support"],
     "win_rates": {
       "1": {
         "winrate": 50.6,
@@ -33769,10 +34003,13 @@
         "winrate": 47.86,
         "games": 117
       }
-    }
+    },
+    "total_games": 38509,
+    "overall_win_rate": 49.44
   },
   "518": {
     "name": "Neeko",
+    "roles": ["top", "jungle"],
     "win_rates": {
       "1": {
         "winrate": 54.55,
@@ -34218,10 +34455,13 @@
         "winrate": 50,
         "games": 72
       }
-    }
+    },
+    "total_games": 5948,
+    "overall_win_rate": 48.49
   },
   "76": {
     "name": "Nidalee",
+    "roles": ["jungle"],
     "win_rates": {
       "2": {
         "winrate": 44.54,
@@ -34479,10 +34719,13 @@
         "winrate": 42,
         "games": 150
       }
-    }
+    },
+    "total_games": 6938,
+    "overall_win_rate": 45.92
   },
   "56": {
     "name": "Nocturne",
+    "roles": ["mid", "jungle"],
     "win_rates": {
       "1": {
         "winrate": 44.44,
@@ -34980,10 +35223,13 @@
         "winrate": 47.48,
         "games": 436
       }
-    }
+    },
+    "total_games": 18482,
+    "overall_win_rate": 51.02
   },
   "20": {
     "name": "Nunu",
+    "roles": ["jungle"],
     "win_rates": {
       "2": {
         "winrate": 55.3,
@@ -35205,10 +35451,13 @@
         "winrate": 49.02,
         "games": 204
       }
-    }
+    },
+    "total_games": 8518,
+    "overall_win_rate": 53.52
   },
   "2": {
     "name": "Olaf",
+    "roles": ["top", "jungle"],
     "win_rates": {
       "3": {
         "winrate": 50,
@@ -35642,10 +35891,13 @@
         "winrate": 48.04,
         "games": 637
       }
-    }
+    },
+    "total_games": 25422,
+    "overall_win_rate": 50.95
   },
   "61": {
     "name": "Orianna",
+    "roles": ["mid"],
     "win_rates": {
       "1": {
         "winrate": 46.63,
@@ -36107,10 +36359,13 @@
         "winrate": 30,
         "games": 130
       }
-    }
+    },
+    "total_games": 16248,
+    "overall_win_rate": 48.64
   },
   "516": {
     "name": "Ornn",
+    "roles": ["top", "mid"],
     "win_rates": {
       "1": {
         "winrate": 32.39,
@@ -36676,10 +36931,13 @@
         "winrate": 47.66,
         "games": 1557
       }
-    }
+    },
+    "total_games": 30889,
+    "overall_win_rate": 50.47
   },
   "80": {
     "name": "Pantheon",
+    "roles": ["top", "jungle", "mid"],
     "win_rates": {
       "1": {
         "winrate": 45.1,
@@ -37249,10 +37507,13 @@
         "winrate": 44.94,
         "games": 445
       }
-    }
+    },
+    "total_games": 12200,
+    "overall_win_rate": 46.73
   },
   "78": {
     "name": "Poppy",
+    "roles": ["top", "jungle"],
     "win_rates": {
       "2": {
         "winrate": 47.62,
@@ -37710,10 +37971,13 @@
         "winrate": 45.26,
         "games": 190
       }
-    }
+    },
+    "total_games": 5344,
+    "overall_win_rate": 47.92
   },
   "555": {
     "name": "Pyke",
+    "roles": ["support"],
     "win_rates": {
       "1": {
         "winrate": 48.82,
@@ -38227,10 +38491,13 @@
         "winrate": 52.04,
         "games": 98
       }
-    }
+    },
+    "total_games": 29683,
+    "overall_win_rate": 48.13
   },
   "246": {
     "name": "Qiyana",
+    "roles": ["mid", "jungle"],
     "win_rates": {
       "1": {
         "winrate": 46.52,
@@ -38784,10 +39051,13 @@
         "winrate": 49.59,
         "games": 242
       }
-    }
+    },
+    "total_games": 17562,
+    "overall_win_rate": 45.3
   },
   "133": {
     "name": "Quinn",
+    "roles": ["top", "adc"],
     "win_rates": {
       "1": {
         "winrate": 47.37,
@@ -39213,10 +39483,13 @@
         "winrate": 45.58,
         "games": 283
       }
-    }
+    },
+    "total_games": 6075,
+    "overall_win_rate": 51.06
   },
   "497": {
     "name": "Rakan",
+    "roles": ["support"],
     "win_rates": {
       "1": {
         "winrate": 43.48,
@@ -39494,10 +39767,13 @@
         "winrate": 35.29,
         "games": 17
       }
-    }
+    },
+    "total_games": 10484,
+    "overall_win_rate": 50.28
   },
   "33": {
     "name": "Rammus",
+    "roles": ["jungle"],
     "win_rates": {
       "2": {
         "winrate": 45.3,
@@ -39743,10 +40019,13 @@
         "winrate": 41.09,
         "games": 129
       }
-    }
+    },
+    "total_games": 6328,
+    "overall_win_rate": 50.13
   },
   "421": {
     "name": "RekSai",
+    "roles": ["jungle"],
     "win_rates": {
       "2": {
         "winrate": 51.07,
@@ -39980,10 +40259,13 @@
         "winrate": 44.96,
         "games": 238
       }
-    }
+    },
+    "total_games": 11530,
+    "overall_win_rate": 49.22
   },
   "58": {
     "name": "Renekton",
+    "roles": ["top", "mid"],
     "win_rates": {
       "1": {
         "winrate": 46.15,
@@ -40429,10 +40711,13 @@
         "winrate": 48.93,
         "games": 1218
       }
-    }
+    },
+    "total_games": 18710,
+    "overall_win_rate": 48.83
   },
   "107": {
     "name": "Rengar",
+    "roles": ["top", "jungle"],
     "win_rates": {
       "2": {
         "winrate": 45.82,
@@ -40862,10 +41147,13 @@
         "winrate": 43.35,
         "games": 489
       }
-    }
+    },
+    "total_games": 18835,
+    "overall_win_rate": 49.7
   },
   "92": {
     "name": "Riven",
+    "roles": ["top"],
     "win_rates": {
       "1": {
         "winrate": 60.61,
@@ -41351,10 +41639,13 @@
         "winrate": 47.84,
         "games": 878
       }
-    }
+    },
+    "total_games": 15853,
+    "overall_win_rate": 48.48
   },
   "68": {
     "name": "Rumble",
+    "roles": ["top", "mid"],
     "win_rates": {
       "1": {
         "winrate": 40.6,
@@ -41900,10 +42191,13 @@
         "winrate": 42.65,
         "games": 340
       }
-    }
+    },
+    "total_games": 14795,
+    "overall_win_rate": 48.95
   },
   "13": {
     "name": "Ryze",
+    "roles": ["top", "mid"],
     "win_rates": {
       "1": {
         "winrate": 42.86,
@@ -42373,10 +42667,13 @@
         "winrate": 40.42,
         "games": 381
       }
-    }
+    },
+    "total_games": 16491,
+    "overall_win_rate": 45.15
   },
   "113": {
     "name": "Sejuani",
+    "roles": ["jungle"],
     "win_rates": {
       "2": {
         "winrate": 45.38,
@@ -42614,10 +42911,13 @@
         "winrate": 44.94,
         "games": 267
       }
-    }
+    },
+    "total_games": 11376,
+    "overall_win_rate": 48.36
   },
   "235": {
     "name": "Senna",
+    "roles": ["adc", "support"],
     "win_rates": {
       "1": {
         "winrate": 54.76,
@@ -43155,10 +43455,13 @@
         "winrate": 52.8,
         "games": 161
       }
-    }
+    },
+    "total_games": 75299,
+    "overall_win_rate": 51.32
   },
   "875": {
     "name": "Sett",
+    "roles": ["top", "jungle", "mid"],
     "win_rates": {
       "1": {
         "winrate": 49.53,
@@ -43744,10 +44047,13 @@
         "winrate": 51.85,
         "games": 108
       }
-    }
+    },
+    "total_games": 55333,
+    "overall_win_rate": 52.06
   },
   "35": {
     "name": "Shaco",
+    "roles": ["top", "jungle"],
     "win_rates": {
       "2": {
         "winrate": 51.27,
@@ -44245,10 +44551,13 @@
         "winrate": 48.08,
         "games": 443
       }
-    }
+    },
+    "total_games": 22338,
+    "overall_win_rate": 52.23
   },
   "98": {
     "name": "Shen",
+    "roles": ["top", "jungle", "support"],
     "win_rates": {
       "1": {
         "winrate": 40.91,
@@ -44770,10 +45079,13 @@
         "winrate": 44.55,
         "games": 835
       }
-    }
+    },
+    "total_games": 17005,
+    "overall_win_rate": 49.64
   },
   "102": {
     "name": "Shyvana",
+    "roles": ["jungle"],
     "win_rates": {
       "2": {
         "winrate": 52.42,
@@ -45067,10 +45379,13 @@
         "winrate": 51.79,
         "games": 280
       }
-    }
+    },
+    "total_games": 12095,
+    "overall_win_rate": 52.38
   },
   "27": {
     "name": "Singed",
+    "roles": ["top"],
     "win_rates": {
       "1": {
         "winrate": 56.52,
@@ -45520,10 +45835,13 @@
         "winrate": 51.5,
         "games": 866
       }
-    }
+    },
+    "total_games": 11933,
+    "overall_win_rate": 53.12
   },
   "14": {
     "name": "Sion",
+    "roles": ["top"],
     "win_rates": {
       "1": {
         "winrate": 41.18,
@@ -46009,10 +46327,13 @@
         "winrate": 50,
         "games": 258
       }
-    }
+    },
+    "total_games": 6300,
+    "overall_win_rate": 50.21
   },
   "15": {
     "name": "Sivir",
+    "roles": ["adc"],
     "win_rates": {
       "4": {
         "winrate": 70,
@@ -46190,10 +46511,13 @@
         "winrate": 50,
         "games": 16
       }
-    }
+    },
+    "total_games": 7603,
+    "overall_win_rate": 48.77
   },
   "72": {
     "name": "Skarner",
+    "roles": ["jungle"],
     "win_rates": {
       "2": {
         "winrate": 50.63,
@@ -46463,10 +46787,13 @@
         "winrate": 46.02,
         "games": 113
       }
-    }
+    },
+    "total_games": 2670,
+    "overall_win_rate": 51.5
   },
   "37": {
     "name": "Sona",
+    "roles": ["top", "support"],
     "win_rates": {
       "1": {
         "winrate": 51.47,
@@ -46976,10 +47303,13 @@
         "winrate": 55.4,
         "games": 556
       }
-    }
+    },
+    "total_games": 26116,
+    "overall_win_rate": 54.66
   },
   "16": {
     "name": "Soraka",
+    "roles": ["top", "support"],
     "win_rates": {
       "1": {
         "winrate": 54.63,
@@ -47521,10 +47851,13 @@
         "winrate": 56.15,
         "games": 976
       }
-    }
+    },
+    "total_games": 41370,
+    "overall_win_rate": 53.85
   },
   "50": {
     "name": "Swain",
+    "roles": ["top", "mid", "support"],
     "win_rates": {
       "1": {
         "winrate": 57.14,
@@ -48018,10 +48351,13 @@
         "winrate": 55.65,
         "games": 124
       }
-    }
+    },
+    "total_games": 16971,
+    "overall_win_rate": 50.52
   },
   "517": {
     "name": "Sylas",
+    "roles": ["top", "jungle",  "mid"],
     "win_rates": {
       "1": {
         "winrate": 40.32,
@@ -48603,10 +48939,13 @@
         "winrate": 46.6,
         "games": 500
       }
-    }
+    },
+    "total_games": 26401,
+    "overall_win_rate": 47.76
   },
   "134": {
     "name": "Syndra",
+    "roles": ["mid"],
     "win_rates": {
       "1": {
         "winrate": 43.46,
@@ -49084,10 +49423,13 @@
         "winrate": 47.62,
         "games": 147
       }
-    }
+    },
+    "total_games": 16867,
+    "overall_win_rate": 47.57
   },
   "223": {
     "name": "TahmKench",
+    "roles": ["support"],
     "win_rates": {
       "1": {
         "winrate": 69.23,
@@ -49353,10 +49695,13 @@
         "winrate": 37.14,
         "games": 70
       }
-    }
+    },
+    "total_games": 3298,
+    "overall_win_rate": 44.42
   },
   "163": {
     "name": "Taliyah",
+    "roles": ["mid", "jungle"],
     "win_rates": {
       "1": {
         "winrate": 46.67,
@@ -49854,10 +50199,13 @@
         "winrate": 50,
         "games": 82
       }
-    }
+    },
+    "total_games": 6781,
+    "overall_win_rate": 48.61
   },
   "91": {
     "name": "Talon",
+    "roles": ["mid"],
     "win_rates": {
       "1": {
         "winrate": 52.99,
@@ -50331,10 +50679,13 @@
         "winrate": 45.2,
         "games": 250
       }
-    }
+    },
+    "total_games": 18341,
+    "overall_win_rate": 50.0
   },
   "44": {
     "name": "Taric",
+    "roles": ["support"],
     "win_rates": {
       "1": {
         "winrate": 43.18,
@@ -50740,10 +51091,13 @@
         "winrate": 62.22,
         "games": 45
       }
-    }
+    },
+    "total_games": 8886,
+    "overall_win_rate": 54.25
   },
   "17": {
     "name": "Teemo",
+    "roles": ["top"],
     "win_rates": {
       "1": {
         "winrate": 63.64,
@@ -51301,10 +51655,13 @@
         "winrate": 48.35,
         "games": 819
       }
-    }
+    },
+    "total_games": 18149,
+    "overall_win_rate": 50.93
   },
   "412": {
     "name": "Thresh",
+    "roles": ["support"],
     "win_rates": {
       "1": {
         "winrate": 53.28,
@@ -51798,10 +52155,13 @@
         "winrate": 45.78,
         "games": 83
       }
-    }
+    },
+    "total_games": 52029,
+    "overall_win_rate": 49.31
   },
   "18": {
     "name": "Tristana",
+    "roles": ["adc"],
     "win_rates": {
       "1": {
         "winrate": 41.38,
@@ -52247,10 +52607,13 @@
         "winrate": 44.19,
         "games": 43
       }
-    }
+    },
+    "total_games": 17744,
+    "overall_win_rate": 48.61
   },
   "48": {
     "name": "Trundle",
+    "roles": ["top", "jungle"],
     "win_rates": {
       "1": {
         "winrate": 30,
@@ -52736,10 +53099,13 @@
         "winrate": 53.4,
         "games": 588
       }
-    }
+    },
+    "total_games": 19284,
+    "overall_win_rate": 51.63
   },
   "23": {
     "name": "Tryndamere",
+    "roles": ["top", "jungle"],
     "win_rates": {
       "1": {
         "winrate": 75,
@@ -53237,10 +53603,13 @@
         "winrate": 47.91,
         "games": 1100
       }
-    }
+    },
+    "total_games": 20678,
+    "overall_win_rate": 48.99
   },
   "4": {
     "name": "TwistedFate",
+    "roles": ["mid"],
     "win_rates": {
       "1": {
         "winrate": 42.65,
@@ -53674,10 +54043,13 @@
         "winrate": 56.73,
         "games": 104
       }
-    }
+    },
+    "total_games": 9989,
+    "overall_win_rate": 48.71
   },
   "29": {
     "name": "Twitch",
+    "roles": ["adc"],
     "win_rates": {
       "2": {
         "winrate": 45.1,
@@ -54075,10 +54447,13 @@
         "winrate": 47.62,
         "games": 84
       }
-    }
+    },
+    "total_games": 10816,
+    "overall_win_rate": 49.33
   },
   "77": {
     "name": "Udyr",
+    "roles": ["top", "jungle"],
     "win_rates": {
       "2": {
         "winrate": 51.59,
@@ -54380,10 +54755,13 @@
         "winrate": 50.22,
         "games": 223
       }
-    }
+    },
+    "total_games": 8175,
+    "overall_win_rate": 51.11
   },
   "6": {
     "name": "Urgot",
+    "roles": ["top"],
     "win_rates": {
       "1": {
         "winrate": 29.41,
@@ -54761,10 +55139,13 @@
         "winrate": 46.73,
         "games": 428
       }
-    }
+    },
+    "total_games": 7480,
+    "overall_win_rate": 50.32
   },
   "110": {
     "name": "Varus",
+    "roles": ["adc"],
     "win_rates": {
       "4": {
         "winrate": 61.9,
@@ -55058,10 +55439,13 @@
         "winrate": 36.84,
         "games": 19
       }
-    }
+    },
+    "total_games": 11346,
+    "overall_win_rate": 49.17
   },
   "67": {
     "name": "Vayne",
+    "roles": ["top", "adc"],
     "win_rates": {
       "1": {
         "winrate": 46.67,
@@ -55623,10 +56007,13 @@
         "winrate": 47.99,
         "games": 423
       }
-    }
+    },
+    "total_games": 45978,
+    "overall_win_rate": 50.97
   },
   "45": {
     "name": "Veigar",
+    "roles": ["mid", "support"],
     "win_rates": {
       "1": {
         "winrate": 46.35,
@@ -56132,10 +56519,13 @@
         "winrate": 45.4,
         "games": 163
       }
-    }
+    },
+    "total_games": 21591,
+    "overall_win_rate": 49.68
   },
   "161": {
     "name": "Velkoz",
+    "roles": ["mid", "support"],
     "win_rates": {
       "1": {
         "winrate": 54.42,
@@ -56629,10 +57019,13 @@
         "winrate": 50,
         "games": 114
       }
-    }
+    },
+    "total_games": 19850,
+    "overall_win_rate": 50.82
   },
   "254": {
     "name": "Vi",
+    "roles": ["jungle"],
     "win_rates": {
       "2": {
         "winrate": 51.32,
@@ -56906,10 +57299,13 @@
         "winrate": 46.82,
         "games": 393
       }
-    }
+    },
+    "total_games": 16301,
+    "overall_win_rate": 51.91
   },
   "112": {
     "name": "Viktor",
+    "roles": ["mid"],
     "win_rates": {
       "1": {
         "winrate": 49.69,
@@ -57339,10 +57735,13 @@
         "winrate": 48.25,
         "games": 143
       }
-    }
+    },
+    "total_games": 12301,
+    "overall_win_rate": 51.43
   },
   "8": {
     "name": "Vladimir",
+    "roles": ["top", "mid"],
     "win_rates": {
       "1": {
         "winrate": 46.56,
@@ -57856,10 +58255,13 @@
         "winrate": 46.02,
         "games": 867
       }
-    }
+    },
+    "total_games": 30571,
+    "overall_win_rate": 49.24
   },
   "106": {
     "name": "Volibear",
+    "roles": ["top", "jungle"],
     "win_rates": {
       "2": {
         "winrate": 46.29,
@@ -58329,10 +58731,13 @@
         "winrate": 46.55,
         "games": 290
       }
-    }
+    },
+    "total_games": 10021,
+    "overall_win_rate": 51.38
   },
   "19": {
     "name": "Warwick",
+    "roles": ["jungle"],
     "win_rates": {
       "2": {
         "winrate": 49.7,
@@ -58718,10 +59123,13 @@
         "winrate": 49.93,
         "games": 717
       }
-    }
+    },
+    "total_games": 29438,
+    "overall_win_rate": 51.66
   },
   "498": {
     "name": "Xayah",
+    "roles": ["adc"],
     "win_rates": {
       "4": {
         "winrate": 33.33,
@@ -58999,10 +59407,13 @@
         "winrate": 44.44,
         "games": 18
       }
-    }
+    },
+    "total_games": 16399,
+    "overall_win_rate": 47.02
   },
   "101": {
     "name": "Xerath",
+    "roles": ["mid", "support"],
     "win_rates": {
       "1": {
         "winrate": 51.43,
@@ -59448,10 +59859,13 @@
         "winrate": 47.06,
         "games": 68
       }
-    }
+    },
+    "total_games": 15075,
+    "overall_win_rate": 48.74
   },
   "5": {
     "name": "XinZhao",
+    "roles": ["jungle"],
     "win_rates": {
       "2": {
         "winrate": 47.37,
@@ -59737,10 +60151,13 @@
         "winrate": 47.66,
         "games": 214
       }
-    }
+    },
+    "total_games": 9187,
+    "overall_win_rate": 50.84
   },
   "157": {
     "name": "Yasuo",
+    "roles": ["top", "mid", "adc"],
     "win_rates": {
       "1": {
         "winrate": 45.54,
@@ -60298,10 +60715,13 @@
         "winrate": 46.14,
         "games": 778
       }
-    }
+    },
+    "total_games": 48466,
+    "overall_win_rate": 49.75
   },
   "83": {
     "name": "Yorick",
+    "roles": ["top"],
     "win_rates": {
       "1": {
         "winrate": 64.29,
@@ -60667,10 +61087,13 @@
         "winrate": 53.11,
         "games": 563
       }
-    }
+    },
+    "total_games": 8717,
+    "overall_win_rate": 52.92
   },
   "350": {
     "name": "Yuumi",
+    "roles": ["support"],
     "win_rates": {
       "1": {
         "winrate": 42,
@@ -61016,10 +61439,13 @@
         "winrate": 48.48,
         "games": 33
       }
-    }
+    },
+    "total_games": 23439,
+    "overall_win_rate": 49.05
   },
   "154": {
     "name": "Zac",
+    "roles": ["jungle"],
     "win_rates": {
       "2": {
         "winrate": 46.37,
@@ -61441,10 +61867,13 @@
         "winrate": 48.62,
         "games": 362
       }
-    }
+    },
+    "total_games": 15528,
+    "overall_win_rate": 50.93
   },
   "238": {
     "name": "Zed",
+    "roles": ["mid"],
     "win_rates": {
       "1": {
         "winrate": 50,
@@ -61934,10 +62363,13 @@
         "winrate": 47.92,
         "games": 265
       }
-    }
+    },
+    "total_games": 23791,
+    "overall_win_rate": 50.06
   },
   "115": {
     "name": "Ziggs",
+    "roles": ["mid", "adc"],
     "win_rates": {
       "1": {
         "winrate": 47,
@@ -62391,10 +62823,13 @@
         "winrate": 51.47,
         "games": 68
       }
-    }
+    },
+    "total_games": 8803,
+    "overall_win_rate": 50.16
   },
   "26": {
     "name": "Zilean",
+    "roles": ["mid", "support"],
     "win_rates": {
       "1": {
         "winrate": 50,
@@ -62756,10 +63191,13 @@
         "winrate": 63.41,
         "games": 41
       }
-    }
+    },
+    "total_games": 8263,
+    "overall_win_rate": 51.48
   },
   "142": {
     "name": "Zoe",
+    "roles": ["mid"],
     "win_rates": {
       "1": {
         "winrate": 39.44,
@@ -63201,10 +63639,13 @@
         "winrate": 53.13,
         "games": 96
       }
-    }
+    },
+    "total_games": 12003,
+    "overall_win_rate": 46.79
   },
   "143": {
     "name": "Zyra",
+    "roles": ["mid", "support"],
     "win_rates": {
       "1": {
         "winrate": 65.91,
@@ -63582,6 +64023,8 @@
         "winrate": 56.52,
         "games": 23
       }
-    }
+    },
+    "total_games": 15755,
+    "overall_win_rate": 51.23
   }
 }

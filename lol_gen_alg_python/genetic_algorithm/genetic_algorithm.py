@@ -9,7 +9,7 @@ logger = logging.getLogger()
 
 class GeneticAlgorithm:
     def __init__(self, population, crossover_rate, mutation_rate,
-                 base_team_composition: TeamComp, champion_information: dict):
+                 base_team_composition: TeamComp, champion_information: dict, meta=True):
         """
         Genetic Algorithm to calculate best team composition to counter given team
         :param population: Size of Population
@@ -17,6 +17,7 @@ class GeneticAlgorithm:
         :param mutation_rate: Mutation Rate
         :param base_team_composition: Team Composition we are optimizing against
         :param champion_information: Available champion_information
+        :param meta: make a meta team comp
         """
         logger.info(f"Population: {population} Crossover: {crossover_rate} Mutation Rate: {mutation_rate}")
         self.champion_information = champion_information
@@ -28,7 +29,7 @@ class GeneticAlgorithm:
 
         self.population = []
         for i in range(population):
-            self.population.append(TeamComp(champion_information, champions=None))
+            self.population.append(TeamComp(champion_information, champions=None, meta=meta))
 
     def crossover(self):
         """

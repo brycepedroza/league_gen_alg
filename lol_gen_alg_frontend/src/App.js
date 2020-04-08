@@ -14,6 +14,7 @@ function App() {
       <h1> Pick Your Team Composition </h1>
       <Champions/>
     </div>
+    
   );
 }
 

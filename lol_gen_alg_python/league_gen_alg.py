@@ -13,7 +13,7 @@ PUT ENEMY CHAMPION IDS(KEYS) HERE. FOR A DETAILED LIST LOOK AT CHAMPION_DATA.JSO
 ENEMY_TEAM = [
     "516",
     "113",
-    "38",
+    "1",
     "236",
     "412"
 ]
@@ -23,6 +23,8 @@ POPULATION = 100
 CROSSOVER_RATE = 0.4
 MUTATION_RATE = 0.8
 NUM_GENERATIONS = 100
+META = True
+
 
 
 def get_champion_information(path):
@@ -69,7 +71,8 @@ def create_enemy_team_comp(champion_ids: list, champion_information: dict):
         champion_details = champion_information.get(champion_id)
         champions.append(Champion(
             champion_id, champion_details.get("name"),
-            champion_details.get("win_rates")))
+            champion_details.get("win_rates")
+        ))
     return TeamComp(champion_information, champions=champions)
 
 
@@ -93,7 +96,8 @@ if __name__ == "__main__":
         crossover_rate=CROSSOVER_RATE,
         mutation_rate=MUTATION_RATE,
         base_team_composition=enemy_team,
-        champion_information=filtered_champ_info
+        champion_information=filtered_champ_info,
+        meta=META
     )
     run_gen_alg(genetic_algorithm, NUM_GENERATIONS)
 
