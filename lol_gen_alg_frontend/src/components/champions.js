@@ -1,16 +1,7 @@
 import React, { Component } from 'react';
-import { Button, List, Input, Row, Col, Spin } from 'antd';
+import { Button, List, Input, Row, Col, Spin, Checkbox } from 'antd';
 
 let gen_alg = require("../gen_alg_logic/main.js");
-
-function sleep(milliseconds) {
-  var start = new Date().getTime();
-  for (var i = 0; i < 1e7; i++) {
-    if ((new Date().getTime() - start) > milliseconds){
-      break;
-    }
-  }
-}
 
 const champion_json = require("../data/full_champion_data.json");
 
@@ -49,13 +40,20 @@ export default class ChampionList extends Component{
 			selected_champs: new Set(),
 			returned_champs: [],
 			loading: false,
-			count:0
+			count:0,
+			meta: true
 		}
 	}
 
 	handle_filter(e){
 		this.setState({
 			available_champs: filter_champions(e.target.value)
+		})
+	}
+
+	change_meta(){
+		this.setState({
+			meta: !this.state.meta
 		})
 	}
 
@@ -81,9 +79,8 @@ export default class ChampionList extends Component{
 
 	select_team(){
 		let champion_ids = [];
-
 		for (let item of this.state.selected_champs) {champion_ids.push(item.id)}
-		this.setState({loading: false, returned_champs: gen_alg.full_gen_alg(champion_ids)})
+		this.setState({loading: false, returned_champs: gen_alg.full_gen_alg(champion_ids, this.state.meta)})
 	}
 
 
@@ -101,7 +98,7 @@ export default class ChampionList extends Component{
 					 	{Array.from(this.state.selected_champs).map((champ)=>
 				 			<Row className="your_champions" key={champ.id} gutter={5}>
 				 				<Col span={5} className="center_div">
-					 				<img className="sidebar_your_champ_image" src={require('../images/'+champ.name+'.png')}/>
+					 				<img className="sidebar_your_champ_image" alt={champ.name} src={require('../images/'+champ.name+'.png')}/>
 				 				</Col>
 				 				<Col span={19} className="center_div" style={{textAlign: "left"}}>
 									<h3 style={{margin:0}}>{champ.name}</h3>
@@ -127,11 +124,14 @@ export default class ChampionList extends Component{
 	  						    dataSource={this.state.available_champs}
 	  						    renderItem={item => (
 	  					      		<List.Item className="champion_select_box" onClick={this.select_champion.bind(this, item)}>
-	  					 				<img className="champ_select_image" src={require('../images/'+item.name+'.png')}/>
+	  					 				<img className="champ_select_image" alt={item.name} src={require('../images/'+item.name+'.png')}/>
 	  				      				<p>{item.name}</p>
 	  					      		</List.Item>
 	  						    )}
 	  					  	/>
+							<div style={{margin: 20}}>
+								<Checkbox onChange={this.change_meta.bind(this)} checked={this.state.meta}>Meta Team Comp?</Checkbox>
+							</div>
 							<div style={{margin: 20}}>
 								<Button
 									type="primary"
@@ -143,7 +143,7 @@ export default class ChampionList extends Component{
 									Lock In
 								</Button>
 							</div>
-			            </div>
+            </div>
 					</Col>
 
           { this.state.loading?
@@ -159,7 +159,7 @@ export default class ChampionList extends Component{
                     {Object.entries(champ.matchups).map(([id, enemy]) =>
                       <Row key={id} gutter={5}>
                         <Col span={3}>
-                          <img className="inline_champ_image" src={require('../images/'+champion_json[id].name+'.png')}/>
+                          <img className="inline_champ_image" alt={champion_json[id].name} src={require('../images/'+champion_json[id].name+'.png')}/>
                         </Col>
                         <Col span={21}>
                           <p style={{margin:0, textAlign: "left"}} key={id}>{enemy.winrate} | {enemy.games}  </p>

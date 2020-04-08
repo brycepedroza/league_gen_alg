@@ -19,10 +19,8 @@ class TeamComp:
         if champions:
             self.champions = champions
         else:
-            if meta:
-                self.champions = TeamComp.generate_meta_team_comp(champion_information)
-            else:
-                self.champions = TeamComp.generate_team_comp(champion_information)
+            self.champions = TeamComp.generate_team_comp(champion_information, meta)
+        self.meta = meta
         self.fitness = -1
         self.mutation_rate = mutation_rate
 
@@ -40,8 +38,9 @@ class TeamComp:
             # Then we mutate one of the champions!
             index = random.randint(0, 4)
             current_champion_ids = [x.id for x in self.champions]
+            temp_index = index if self.meta else -1
             new_champion = TeamComp.make_new_champion(
-                available_champions, current_champion_ids, index=index)
+                available_champions, current_champion_ids, index=temp_index)
 
             logger.debug(f"Replacing individual {individual}'s "
                          f"{self.champions[index].name} with {new_champion.name}")
@@ -75,36 +74,18 @@ class TeamComp:
         return False
 
     @staticmethod
-    def generate_team_comp(champion_details: dict) -> [Champion]:
+    def generate_team_comp(champion_details: dict, meta=False) -> [Champion]:
         """
         Given all matchup information. Create a random team comp
         :param champion_details: Dict containing all matchup information for all champions
+        :param meta: flag if we should create meta team comp. false by default
         :return: list of Champions
         """
         champions = []
         ids_chosen = []
         for i in range(5):
-            new_champion = TeamComp.make_new_champion(champion_details, ids_chosen)
-            champions.append(new_champion)
-            ids_chosen.append(new_champion.id)
-        return champions
-
-    @staticmethod
-    def generate_meta_team_comp(champion_details: dict) -> [Champion]:
-        """
-        Performs the same as generate team comp but ensures that
-        the a meta team comp is made
-        0: top
-        1: jungle
-        2: mid
-        3: adc
-        4: support
-        """
-        champions = []
-        ids_chosen = []
-        # i maps to the positions above
-        for i in range(5):
-            new_champion = TeamComp.make_new_champion(champion_details, ids_chosen, index=i)
+            temp_index = i if meta else -1
+            new_champion = TeamComp.make_new_champion(champion_details, ids_chosen, index=temp_index)
             champions.append(new_champion)
             ids_chosen.append(new_champion.id)
         return champions

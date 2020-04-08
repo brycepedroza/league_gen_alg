@@ -8213,7 +8213,7 @@
   },
   "122": {
     "name": "Darius",
-    "roles": ["top", "jungle"],
+    "roles": ["top"],
     "win_rates": {
       "1": {
         "winrate": 45.31,

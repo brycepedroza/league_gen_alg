@@ -5,7 +5,7 @@ import cloneDeep from 'lodash/cloneDeep';
 export default class GeneticAlgorithm {
   constructor(
     population, crossover_rate,
-    mutation_rate, enemy_team_comp, champ_info
+    mutation_rate, enemy_team_comp, champ_info, meta=true
   ){
     this.champ_info = champ_info;
     this.crossover_rate = crossover_rate;
@@ -15,7 +15,7 @@ export default class GeneticAlgorithm {
 
     this.population = [];
     for (let i = 0; i < population; i ++) {
-      this.population.push(new TeamComp(champ_info));
+      this.population.push(new TeamComp(champ_info, null, mutation_rate, meta));
     }
   }
 

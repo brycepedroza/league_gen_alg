@@ -26,7 +26,6 @@ NUM_GENERATIONS = 100
 META = True
 
 
-
 def get_champion_information(path):
     with open(path, 'rb') as f:
         return json.load(f)
