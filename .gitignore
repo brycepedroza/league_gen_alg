@@ -1,5 +1,6 @@
 .idea/
-*.log
+*.logs/
+*.log*
 .installed.cfg
 bin
 develop-eggs

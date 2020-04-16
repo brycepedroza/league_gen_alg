@@ -18,15 +18,11 @@ class Champion:
         :param id_to_check: ID to check as a string
         :return: Win rate as a float or None
         """
+        z = 1.96
         champion = self.matchups.get(id_to_check)
         if champion:
-            win_rate = champion.get("winrate")/100
-            log_games = math.log(champion.get("games"), 10)
-            res = win_rate * log_games
-            return res
+            p_initial = champion.get("winrate")/100
+            champion_score = p_initial - z * math.sqrt((p_initial*(1-p_initial))/champion.get("games"))
+            return champion_score
         else:
             return None
-        # return champion.get("winrate")/100 * math.log(champion.get("games"), 10) \
-        #     if champion else None
-        # return champion.get("winrate")/100  \
-        #     if champion else None

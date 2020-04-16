@@ -1,53 +1,32 @@
 import React, { Component } from 'react';
 import { Button, List, Input, Row, Col, Spin, Checkbox } from 'antd';
+import Mychart from './wr_chart.js'
+import cloneDeep from 'lodash/cloneDeep';
 
-let gen_alg = require("../gen_alg_logic/main.js");
-
+const gen_alg = require("../gen_alg_logic/main.js");
 const champion_json = require("../data/full_champion_data.json");
-
-let champion_list = [];
-for (var id in champion_json) {
-	champion_list.push({
-		id: id,
-		name: champion_json[id].name,
-		total_games: champion_json[id].total_games,
-		overall_win_rate: champion_json[id].overall_win_rate
-	});
-}
-champion_list.sort((a,b) => (a.name > b.name) ? 1:-1)
-
-function filter_champions(filter){
-	if (filter.trim() === "") {
-		return champion_list;
-	}
-	else {
-		filter = filter.toLowerCase();
-		let filtered_list = [];
-		champion_list.forEach(function(item, index){
-			if (item.name.toLowerCase().includes(filter)){
-				filtered_list.push(item);
-			}
-		})
-		return filtered_list;
-	}
-}
+const winrate_data = require("../data/winrate_data.json");
+const util = require("../helpers/util.js")
+const all_champions = util.get_champion_list(champion_json)
 
 export default class ChampionList extends Component{
 	constructor(props) {
 		super(props);
 		this.state = {
-			available_champs:champion_list,
+			available_champs:all_champions,
 			selected_champs: new Set(),
 			returned_champs: [],
 			loading: false,
 			count:0,
-			meta: true
+			meta: true,
+			show_graph: false,
+			graph_data: util.get_graph_data(winrate_data)
 		}
 	}
 
 	handle_filter(e){
 		this.setState({
-			available_champs: filter_champions(e.target.value)
+			available_champs: util.filter_champions(e.target.value, all_champions)
 		})
 	}
 
@@ -58,6 +37,7 @@ export default class ChampionList extends Component{
 	}
 
 	select_champion(item){
+		let team_wr = null;
 		let champs = this.state.selected_champs;
 		let size = champs.size;
 		champs.add(item);
@@ -67,9 +47,25 @@ export default class ChampionList extends Component{
 		else if (champs.size > 5) {
 			let first_champ = champs.values().next().value;
 			champs.delete(first_champ);
+			console.log(champs)
 		}
+
+		if (champs.size === 5) {
+			team_wr = cloneDeep(this.state.graph_data.clear_data)
+			// calcualte the avg_winrate of the teamcomp
+			let winrate = util.get_team_percentile(champs)
+			let bins = this.state.graph_data.percentiles.length;
+			let index_to_update = Math.round((winrate-this.state.graph_data.x_low)/.1)
+			console.log(index_to_update)
+			team_wr[index_to_update].y = this.state.graph_data.y_high
+		}
+
 		this.setState({
-			selected_champs: champs
+			selected_champs: champs,
+			graph_data: {
+				...this.state.graph_data,
+				team_wr: team_wr === null ? this.state.graph_data.team_wr : team_wr
+			}
 		})
 	}
 
@@ -80,6 +76,7 @@ export default class ChampionList extends Component{
 	select_team(){
 		let champion_ids = [];
 		for (let item of this.state.selected_champs) {champion_ids.push(item.id)}
+		console.log(champion_ids)
 		this.setState({loading: false, returned_champs: gen_alg.full_gen_alg(champion_ids, this.state.meta)})
 	}
 
@@ -87,6 +84,9 @@ export default class ChampionList extends Component{
 	render(){
 		return(
 			<div className="box">
+				<Mychart
+					graph_data = {this.state.graph_data}
+				/>
 				<Input
           			className="champion_input"
 					placeholder="Search for a Champion"

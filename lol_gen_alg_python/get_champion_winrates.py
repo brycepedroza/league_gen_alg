@@ -26,7 +26,7 @@ def get_champion_winrates(id):
 
 
 if __name__ == "__main__":
-    champion_information = get_champion_details('champion_data.json')
+    champion_information = get_champion_details('data/champion_data.json')
     for key, value in champion_information.items():
         data = get_champion_winrates(key)
         win_rates = data['stats']['matchups']['all']

@@ -10,13 +10,7 @@ from genetic_algorithm.genetic_algorithm import GeneticAlgorithm
 """
 PUT ENEMY CHAMPION IDS(KEYS) HERE. FOR A DETAILED LIST LOOK AT CHAMPION_DATA.JSON
 """
-ENEMY_TEAM = [
-    "516",
-    "113",
-    "1",
-    "236",
-    "412"
-]
+ENEMY_TEAM = [ "9", "150", "39", "202", "126" ]
 
 # Change these as you wish :)
 POPULATION = 100
