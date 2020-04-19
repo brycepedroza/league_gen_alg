@@ -5,7 +5,6 @@ import React from 'react';
 export default class Mychart extends React.Component {
        constructor(props) {
          super(props);
-         console.log(props)
          this.state = {
            series: [
              {
@@ -19,9 +18,14 @@ export default class Mychart extends React.Component {
                data: this.props.graph_data.percentiles
              },
              {
-               name: 'TeamWr',
-               type: 'column',
+               name: 'Given Team Performance',
+               type: 'scatter',
                data: this.props.graph_data.team_wr
+             },
+             {
+               name: 'Counter Team Performance',
+               type: 'scatter',
+               data: this.props.graph_data.counter_team_wr
              }
            ],
            options: {
@@ -36,10 +40,10 @@ export default class Mychart extends React.Component {
              },
              fill: {
                type:'solid',
-               opacity: [0.35, 0.35, 1],
+               opacity: [0.35, 0.35, 1, 1],
              },
              markers: {
-               size: [0, 0, 0]
+               size: [0, 0, 7, 7]
              },
              tooltip: {
               shared: true,
@@ -49,9 +53,14 @@ export default class Mychart extends React.Component {
              },
              xaxis: {
                type: 'numeric',
-               tickAmount: 12,
-               min: this.props.graph_data.x_low,
-               max:this.props.graph_data.x_high,
+               labels: {
+                 trim: false,
+                 showDuplicates: false,
+                 formatter: function(value, index){
+                   return value.toFixed(1)
+                 }
+               },
+               tickAmount: 20,
              },
              yaxis: {
                min: this.props.graph_data.y_low,
@@ -62,10 +71,11 @@ export default class Mychart extends React.Component {
        }
 
        componentDidUpdate(prevProps) {
-         if (this.props.graph_data.team_wr !== prevProps.graph_data.team_wr) {
+         if ((this.props.graph_data.team_wr !== prevProps.graph_data.team_wr) || (this.props.graph_data.counter_team_wr !== prevProps.graph_data.counter_team_wr)) {
            let series = JSON.parse(JSON.stringify(this.state.series));
-           console.log("here")
            series[2].data = this.props.graph_data.team_wr
+           series[3].data = this.props.graph_data.counter_team_wr
+
            this.setState({
              series: series
            })
@@ -73,7 +83,6 @@ export default class Mychart extends React.Component {
        }
 
        render() {
-         console.log(this.state.series[0])
          return (
              <div id="chart">
          <Chart options={this.state.options} series={this.state.series} type="line" height={350} />

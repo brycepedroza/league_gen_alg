@@ -54,10 +54,8 @@ export default class ChampionList extends Component{
 			team_wr = cloneDeep(this.state.graph_data.clear_data)
 			// calcualte the avg_winrate of the teamcomp
 			let winrate = util.get_team_percentile(champs)
-			let bins = this.state.graph_data.percentiles.length;
-			let index_to_update = Math.round((winrate-this.state.graph_data.x_low)/.1)
-			console.log(index_to_update)
-			team_wr[index_to_update].y = this.state.graph_data.y_high
+			let index = Math.round((winrate-this.state.graph_data.x_low)/.1)
+			team_wr[index].y = this.state.graph_data.frequencies[index].y
 		}
 
 		this.setState({
@@ -74,12 +72,30 @@ export default class ChampionList extends Component{
 	}
 
 	select_team(){
+		// get champ ids
 		let champion_ids = [];
 		for (let item of this.state.selected_champs) {champion_ids.push(item.id)}
-		console.log(champion_ids)
-		this.setState({loading: false, returned_champs: gen_alg.full_gen_alg(champion_ids, this.state.meta)})
-	}
 
+		// run gen alg
+		let team = gen_alg.full_gen_alg(champion_ids, this.state.meta)
+		console.log(team)
+
+
+		// get graph info
+		let counter_team_wr = cloneDeep(this.state.graph_data.clear_data)
+		let winrate = util.get_team_percentile(team)
+		let index = Math.round((winrate-this.state.graph_data.x_low)/.1)
+		counter_team_wr[index].y = this.state.graph_data.frequencies[index].y
+		this.setState(
+			{
+				loading: false,
+				returned_champs:team,
+				graph_data: {
+					...this.state.graph_data,
+					counter_team_wr: counter_team_wr
+				}
+			})
+	}
 
 	render(){
 		return(
