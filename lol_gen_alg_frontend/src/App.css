@@ -52,6 +52,13 @@
 	margin: auto;
 }
 
+.loading_div {
+	display: block;
+	margin: auto;
+  min-height: 100%;
+  padding: 50px;
+}
+
 #chart {
   max-width: 1200px;
   margin: auto;

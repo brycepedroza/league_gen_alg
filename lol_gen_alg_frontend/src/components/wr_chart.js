@@ -70,7 +70,7 @@ export default class Mychart extends React.Component {
                    return value.toFixed(1)
                  }
                },
-               tickAmount: 20,
+               tickAmount: 10,
                title: {
                  text: "Win Rate",
                  offsetY: 10

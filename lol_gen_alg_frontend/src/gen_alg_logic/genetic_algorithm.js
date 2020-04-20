@@ -103,7 +103,7 @@ export default class GeneticAlgorithm {
       avg_fitness = avg_fitness + this.population[i].fitness;
     }
     this.average_fitness = avg_fitness/this.population.length;
-    // Keep list of 10 bestt individuals.
+    // Keep list of 10 best individuals.
     this.best_individuals = this.best_individuals.concat(this.population);
     this.best_individuals = this.best_individuals.sort((a,b) => (a.fitness > b.fitness) ? -1 : 1);
     this.best_individuals = this.best_individuals.slice(0,10);

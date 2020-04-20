@@ -5,7 +5,6 @@ import cloneDeep from 'lodash/cloneDeep';
 import Mychart from './wr_chart.js'
 import Options from './gen_alg_options.js'
 
-const { Panel } = Collapse;
 const { Meta } = Card;
 const gen_alg = require("../gen_alg_logic/main.js");
 const champion_json = require("../data/full_champion_data.json");
@@ -178,8 +177,8 @@ export default class ChampionList extends Component{
 
 					<Col style={{minHeight: "100%"}} className="box" xs={{span:24, order:2}} sm={{span:8, order:1}} lg={{span:6, order:1}}>
 						{Array.from(this.state.selected_champs).map((champ)=>
-							<Card className="center_div">
-					 			<Row key={champ.id} gutter={5}>
+							<Card key={champ.id} className="center_div" style={{marginBottom: 10}}>
+					 			<Row gutter={5}>
 					 				<Col span={5} className="center_div">
 						 				<img className="sidebar_your_champ_image" alt={champ.name} src={require('../images/'+champ.name+'.png')}/>
 					 				</Col>
@@ -234,9 +233,6 @@ export default class ChampionList extends Component{
 						    )}
 					  		/>
 								<div style={{margin: 5}}>
-									<Checkbox onChange={this.change_meta.bind(this)} checked={this.state.meta}>Meta Team Comp?</Checkbox>
-								</div>
-								<div style={{margin: 5}}>
 									<Button
 										type="primary"
 										shape="round"
@@ -262,14 +258,14 @@ export default class ChampionList extends Component{
 					</Col>
 
           { this.state.loading?
-            <Col style={{minHeight: "100%", padding: 50}} className="center_div" xs={{span:24, order:4}} sm={{span:8, order:3}} lg={{span:6, order:3}}>
+            <Col className="loading_div" xs={{span:24, order:4}} sm={{span:8, order:3}} lg={{span:6, order:3}}>
                 <Spin size="large" />
             </Col>
             :
             <Col style={{minHeight: "100%"}} className="box" xs={{span:24, order:4}} sm={{span:8, order:3}} lg={{span:6, order:3}}>
               {Array.from(this.state.returned_champs).map((champ)=>
-								<Card className="center_div">
-	                <Row key={champ.id} gutter={2}>
+								<Card key={champ.id} className="center_div" style={{marginBottom: 10}}>
+	                <Row gutter={2}>
 
 	                  <Col span={12} className="center_div">
 	                    {Object.entries(champ.matchups).map(([id, enemy]) =>

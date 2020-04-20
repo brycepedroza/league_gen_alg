@@ -5,11 +5,6 @@ import cloneDeep from 'lodash/cloneDeep';
 
 let champion_information = require('../data/full_champion_data.json'); //with path
 
-// Change these as you wish :)
-const POPULATION = 100;
-const CROSSOVER_RATE = 0.4;
-const MUTATION_RATE = 0.8;
-const NUM_GENERATIONS = 100;
 
 function filter_champion_information(champion_ids, champ_info) {
   /*
