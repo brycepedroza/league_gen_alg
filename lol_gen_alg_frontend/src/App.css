@@ -17,7 +17,9 @@
 
 .your_champions {
 	min-height: 20%;
-	/*border: 2px red solid;*/
+  margin-bottom: 2px;
+  display: block;
+  margin: auto;
 }
 
 .champ_select_image {
@@ -26,7 +28,7 @@
 
 .champ_select {
 	text-align: center;
-	max-height: 600px;
+	max-height: 700px;
 	overflow-y: scroll;
 	overflow-x: hidden;
 }
@@ -50,6 +52,20 @@
 	margin: auto;
 }
 
+#chart {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px
+}
+
+/* ANT CUSTOMIZATIONS */
+
+.ant-card-body {
+  padding: 10px;
+}
+
+
+
 @media only screen and (max-width: 600px){
 
 
@@ -62,10 +78,6 @@
 	.champ_select_image {
 		max-width: 75px;
 	}
-	.sidebar_your_champ_image {
-		max-width: 100px;
-	}
-
   .champion_input {
     margin: 0px;
   }

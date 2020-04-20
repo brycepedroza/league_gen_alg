@@ -10,7 +10,6 @@ const POPULATION = 100;
 const CROSSOVER_RATE = 0.4;
 const MUTATION_RATE = 0.8;
 const NUM_GENERATIONS = 100;
-const META = true;
 
 function filter_champion_information(champion_ids, champ_info) {
   /*
@@ -63,12 +62,17 @@ function run_gen_alg(gen_alg, generations){
   }
 }
 
-export function full_gen_alg(enemy_ids, meta){
+export function full_gen_alg(enemy_ids, params){
   let enemy_team = create_enemy_team_comp(enemy_ids, champion_information);
   let filtered_champ_info = filter_champion_information(enemy_ids, champion_information);
-  let gen_alg = new GeneticAlgorithm(POPULATION, CROSSOVER_RATE, MUTATION_RATE,
-    enemy_team, filtered_champ_info, meta);
-  run_gen_alg(gen_alg, NUM_GENERATIONS);
+  let gen_alg = new GeneticAlgorithm(
+    params.population,
+    params.crossover_rate,
+    params.mutation_rate,
+    enemy_team,
+    filtered_champ_info,
+    params.meta);
+  run_gen_alg(gen_alg, params.generations);
 
   // console.log("enemy team");
   // enemy_team.champions.forEach(function(champion, index){
