@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
-import { Button, List, Input, Row, Col, Spin, Checkbox, Card, Collapse } from 'antd';
-import {CloseOutlined} from '@ant-design/icons';
+import { Button, List, Input, Row, Col, Spin, Card, Typography, Statistic } from 'antd';
+import {CloseOutlined, ArrowUpOutlined} from '@ant-design/icons';
 import cloneDeep from 'lodash/cloneDeep';
 import Mychart from './wr_chart.js'
 import Options from './gen_alg_options.js'
 
+const { Title } = Typography;
 const { Meta } = Card;
 const gen_alg = require("../gen_alg_logic/main.js");
 const champion_json = require("../data/full_champion_data.json");
 const winrate_data = require("../data/winrate_data.json");
 const util = require("../helpers/util.js")
 const all_champions = util.get_champion_list(champion_json)
-
 
 
 export default class ChampionList extends Component{
@@ -136,7 +136,8 @@ export default class ChampionList extends Component{
 		for (let item of this.state.selected_champs) {champion_ids.push(item.id)}
 
 		// run gen alg
-		let team = gen_alg.full_gen_alg(champion_ids, this.state.gen_alg)
+		let results = gen_alg.full_gen_alg(champion_ids, this.state.gen_alg)
+		let team = results.champions
 
 		// get graph info
 		let counter_team_wr = cloneDeep(this.state.graph_data.clear_data)
@@ -157,6 +158,7 @@ export default class ChampionList extends Component{
 			{
 				loading: false,
 				returned_champs:team,
+				fitness: results.fitness,
 				graph_data: {
 					...this.state.graph_data,
 					counter_team_wr: counter_team_wr,
@@ -169,9 +171,10 @@ export default class ChampionList extends Component{
 		return(
 			<div className="box">
 				<Input
-          className="champion_input"
+					className="champion_input"
 					placeholder="Search for a Champion"
-					onChange={this.handle_filter.bind(this)}/>
+					onChange={this.handle_filter.bind(this)}
+				/>
 
 				<Row gutter={5}>
 
@@ -263,7 +266,21 @@ export default class ChampionList extends Component{
             </Col>
             :
             <Col style={{minHeight: "100%"}} className="box" xs={{span:24, order:4}} sm={{span:8, order:3}} lg={{span:6, order:3}}>
-              {Array.from(this.state.returned_champs).map((champ)=>
+							{ this.state.returned_champs.length > 0 ?
+								<Card style={{marginBottom: 10}}>
+									<Statistic
+										title="Counter Pick Confidence"
+										value={this.state.fitness * 100}
+										precision={2}
+										valueStyle={{ color: '#3f8600' }}
+										prefix={<ArrowUpOutlined />}
+										suffix="%"
+									/>
+								</Card> :
+								null
+							}
+
+							{Array.from(this.state.returned_champs).map((champ)=>
 								<Card key={champ.id} className="center_div" style={{marginBottom: 10}}>
 	                <Row gutter={2}>
 

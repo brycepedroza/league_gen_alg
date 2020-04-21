@@ -44,7 +44,8 @@ export default class Mychart extends React.Component {
                height: 350,
                toolbar: {
                  show: false,
-               }
+               },
+                fontFamily: 'Roboto Mono, monospace'
              },
              fill: {
                type:'solid',

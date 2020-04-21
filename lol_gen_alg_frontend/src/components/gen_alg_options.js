@@ -4,10 +4,6 @@ import { Row, Col, Checkbox, Slider, InputNumber, Collapse } from 'antd';
 const { Panel } = Collapse;
 
 export default class Mychart extends React.Component {
-   constructor(props) {
-     super(props);
-   }
-
    render() {
      return (
        <Collapse bordered={false} style={{textAlign: "left", margin: 10}}>

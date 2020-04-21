@@ -149,7 +149,6 @@ export function get_final_team_percentile(champions){
 
       // temp stuff
       temp_winrate += champ.matchups[id].winrate;
-      console.log(temp_winrate)
       count += 1
     }
     // var winrate = games_won/total_games;
@@ -157,6 +156,5 @@ export function get_final_team_percentile(champions){
     avg_winrate += temp_winrate/count;
   }
   avg_winrate = avg_winrate / champions.length;
-  console.log(avg_winrate)
   return Math.round(avg_winrate * 10)/10;
 }

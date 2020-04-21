@@ -1,20 +1,27 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Champions from './components/champions.js'
+import Header from './components/header.js'
+import Footer from './components/footer.js'
+
 import './App.css'
+const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
 
 
 function App() {
 
-  useEffect(s => {
-    // gen_alg.full_gen_alg(ENEMY_TEAM);
-  });
+  const myRef = useRef(null)
+  const executeScroll = () => {
+    console.log("scrolling")
+    scrollToRef(myRef)
+  }
 
   return (
     <div className="App">
-      <h1> Pick Your Team Composition </h1>
+      <Header executeScroll={executeScroll}/>
       <Champions/>
+      <Footer location={myRef}/>
     </div>
-    
+
   );
 }
 

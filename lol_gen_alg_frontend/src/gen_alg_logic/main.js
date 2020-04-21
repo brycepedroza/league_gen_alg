@@ -69,19 +69,8 @@ export function full_gen_alg(enemy_ids, params){
     params.meta);
   run_gen_alg(gen_alg, params.generations);
 
-  // console.log("enemy team");
-  // enemy_team.champions.forEach(function(champion, index){
-  //   console.log(champion.id, champion.name, champion.total_games);
-  //   console.log("------------------------------------")
-  // });
 
-  // console.log("your team");
-  // gen_alg.best_individuals[0].champions.forEach(function(champion, index){
-  //   console.log(champion.id, champion.name);
-  //   console.log(champion.total_games, champion.overall_win_rate);
-  //   console.log(champion.matchups);
-  //   console.log("------------------------------------")
-  // });
-
-  return gen_alg.best_individuals[0].champions
-}
+  return {
+    champions: gen_alg.best_individuals[0].champions,
+    fitness: gen_alg.best_individuals[0].fitness
+  }}

@@ -1,5 +1,13 @@
 @import '~antd/dist/antd.css';
 
+body {
+  font-family: 'Roboto Mono', monospace;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 .App {
   text-align: center;
 }
@@ -50,6 +58,28 @@
 .center_div {
 	display: block;
 	margin: auto;
+}
+
+.header_div {
+  display: block;
+  margin: auto;
+  padding: 10px;
+  background: whitesmoke;
+}
+
+.footer_div {
+  text-align: left;
+  display: block;
+  margin: auto;
+  padding: 20px;
+  background: whitesmoke;
+}
+
+.info_div {
+  background: #fff;
+  padding: 24px;
+  max-width: 800px;
+  min-height: 280px;
 }
 
 .loading_div {
