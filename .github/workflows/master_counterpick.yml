@@ -25,8 +25,8 @@
 #         cd lol_gen_alg_frontend
 #         npm install
 #         npm run build --if-present
-#       env:
-#          CI: ""
+      # env:
+      #    CI: ""
 #
 #     - name: 'Deploy to Azure Web App'
 #       uses: azure/webapps-deploy@v1
@@ -71,6 +71,8 @@ jobs:
         cd lol_gen_alg_frontend
         npm install
         npm run build --if-present
+      env:
+        CI: ""
     - name: 'Deploy to Azure WebApp'
       uses: azure/webapps-deploy@v2
       with:
