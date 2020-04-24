@@ -25,7 +25,6 @@ jobs:
         cd lol_gen_alg_frontend
         npm install
         npm run build --if-present
-        mv ./build ../
       env:
          CI: ""
 
@@ -35,4 +34,4 @@ jobs:
         app-name: 'counterpick'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_ee938cc80427471189acbd5770b13f1c }}
-        package: .
+        package: ./lol_gen_alg_frontend
