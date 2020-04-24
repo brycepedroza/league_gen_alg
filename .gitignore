@@ -36,3 +36,5 @@ lib64
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+sp_creds.json
