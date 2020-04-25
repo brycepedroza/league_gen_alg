@@ -20,7 +20,7 @@ jobs:
             username: ${{ secrets.REGISTRY_USERNAME }}
             password: ${{ secrets.REGISTRY_PASSWORD }}
         - run: |
-            docker build -t cse598bic.azurecr.io/lolcounter:${{ github.sha }}  -f .\lol_gen_alg_frontend\Dockerfile .\lol_gen_alg_frontend\
+            docker build -t cse598bic.azurecr.io/lolcounter:${{ github.sha }} -f lol_gen_alg_frontend\Dockerfile lol_gen_alg_frontend\
             docker push cse598bic.azurecr.io/lolcounter:${{ github.sha }}
 
         - name: 'Deploy to Azure Container Instances'
