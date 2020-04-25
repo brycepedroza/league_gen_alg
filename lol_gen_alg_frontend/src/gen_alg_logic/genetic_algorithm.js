@@ -107,8 +107,6 @@ export default class GeneticAlgorithm {
     this.best_individuals = this.best_individuals.concat(this.population);
     this.best_individuals = this.best_individuals.sort((a,b) => (a.fitness > b.fitness) ? -1 : 1);
     this.best_individuals = this.best_individuals.slice(0,10);
-    console.log(this.best_individuals[0])
-
   }
 
   iterate_population(){

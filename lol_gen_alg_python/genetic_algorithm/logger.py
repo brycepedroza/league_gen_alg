@@ -1,5 +1,4 @@
 import logging
-import time
 from logging.handlers import RotatingFileHandler
 
 logger = None

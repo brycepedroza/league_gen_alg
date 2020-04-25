@@ -1,7 +1,6 @@
 import random
 import logging
 import math
-import copy
 from genetic_algorithm.champion import Champion
 logger = logging.getLogger()
 

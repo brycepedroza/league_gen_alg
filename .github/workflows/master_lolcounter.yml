@@ -1,49 +1,3 @@
-# name: Build and deploy Node.js app to Azure Web App - lolcounter
-#
-# on:
-#   [push]
-#
-# # CONFIGURATION
-# # For help, go to https://github.com/Azure/Actions
-# #
-# # 1. Set up the following secrets in your repository:
-# #   AZURE_WEBAPP_PUBLISH_PROFILE
-# #
-# # 2. Change these variables for your configuration:
-# env:
-#   AZURE_WEBAPP_NAME: 'lolcounter'    # set this to your application's name
-#   AZURE_WEBAPP_PACKAGE_PATH: '.'      # set this to the path to your web app project, defaults to the repository root
-#   NODE_VERSION: '12.x'                # set this to the node version to use
-#
-# jobs:
-#   build-and-deploy:
-#     name: Build and Deploy
-#     runs-on: ubuntu-latest
-#     steps:
-#     - uses: actions/checkout@master
-#     - name: Use Node.js ${{ env.NODE_VERSION }}
-#       uses: actions/setup-node@v1
-#       with:
-#         node-version: ${{ env.NODE_VERSION }}
-#     - name: npm install, build, and test
-#       run: |
-#         # Build and test the project, then
-#         # deploy to Azure Web App.
-#         npm install
-#         npm run build --if-present
-#       env:
-#         CI: ""
-#     - name: 'Deploy to Azure WebApp'
-#       uses: azure/webapps-deploy@v2
-#       with:
-#         app-name: ${{ env.AZURE_WEBAPP_NAME }}
-#         publish-profile: ${{ secrets.AzureAppService_PublishProfile_cf7483445c0b47db89f9e986ec47258d }}
-#         package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
-
-  # For more information on GitHub Actions for Azure, refer to https://github.com/Azure/Actions
-  # For more samples to get started with GitHub Action workflows to deploy to Azure, refer to https://github.com/Azure/actions-workflow-samples
-
-
 on: [push]
 name: lolcounter container workflow
 
@@ -66,16 +20,16 @@ jobs:
             username: ${{ secrets.REGISTRY_USERNAME }}
             password: ${{ secrets.REGISTRY_PASSWORD }}
         - run: |
-            docker build -t cse598bic.azurecr.io/lolcounter:${{ github.sha }} .
+            docker build -t cse598bic.azurecr.io/lolcounter:${{ github.sha }}  -f .\lol_gen_alg_frontend\Dockerfile .\lol_gen_alg_frontend\
             docker push cse598bic.azurecr.io/lolcounter:${{ github.sha }}
 
         - name: 'Deploy to Azure Container Instances'
           uses: 'azure/aci-deploy@v1'
           with:
             resource-group: cse598
-            dns-name-label: https://lolcounter.azurewebsites.net
+            dns-name-label: https://lolcounter1.azurewebsites.net
             image: cse598bic.azurecr.io/lolcounter:${{ github.sha }}
             registry-username: ${{ secrets.REGISTRY_USERNAME }}
             registry-password: ${{ secrets.REGISTRY_PASSWORD }}
-            name: lolcounter
+            name: lolcounter1
             location: 'Central US'

@@ -139,13 +139,13 @@ export function get_final_team_percentile(champions){
   */
   let avg_winrate = 0;
   for (var champ of champions) {
-    var games_won = 0;
-    var total_games = 0;
+    // let games_won = 0;
+    // let total_games = 0;
     var temp_winrate = 0;
     var count = 0;
     for (var id in champ.matchups) {
-      games_won += champ.matchups[id].games * champ.matchups[id].winrate;
-      total_games += champ.matchups[id].games;
+      // games_won += champ.matchups[id].games * champ.matchups[id].winrate;
+      // total_games += champ.matchups[id].games;
 
       // temp stuff
       temp_winrate += champ.matchups[id].winrate;

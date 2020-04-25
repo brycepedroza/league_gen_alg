@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import { Button, List, Input, Row, Col, Spin, Card, Typography, Statistic } from 'antd';
+import { Button, List, Input, Row, Col, Spin, Card, Statistic } from 'antd';
 import {CloseOutlined, ArrowUpOutlined} from '@ant-design/icons';
 import cloneDeep from 'lodash/cloneDeep';
 import Mychart from './wr_chart.js'
 import Options from './gen_alg_options.js'
 
-const { Title } = Typography;
 const { Meta } = Card;
 const gen_alg = require("../gen_alg_logic/main.js");
 const champion_json = require("../data/full_champion_data.json");
@@ -225,7 +224,7 @@ export default class ChampionList extends Component{
 										      <img
 														style={{margin: "auto", padding: 5}}
 														className="champ_select_image"
-										        alt="example"
+										        alt={item.name + "select"}
 										        src={require('../images/'+item.name+'.png')}
 										      />
 										    }
@@ -304,7 +303,7 @@ export default class ChampionList extends Component{
 	                  </Col>
 
 	                  <Col span={5} className="center_div">
-	                    <img className="sidebar_enemy_champ_image" src={require('../images/'+champ.name+'.png')}/>
+	                    <img alt={champ.name} className="sidebar_enemy_champ_image" src={require('../images/'+champ.name+'.png')}/>
 	                  </Col>
 
 	                </Row>

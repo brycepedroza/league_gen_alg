@@ -103,8 +103,14 @@ export default class Footer extends React.Component {
                   </Text>
 
                   <Title level={3}> How does it perform? </Title>
+                  <div style={{textAlign: 'center'}}>
+                    <img
+                      className="footer_image"
+                      alt="performance"
+                      src={require('../images/performance.PNG')}/>
+                  </div>
                   <Text>
-                    Pretty well! More details to come. 
+                    Mutation and crossover allow the algorithm to explore the search space more drastically in an effort to find the global maximum. This might cause dips in the average fitness of the individuals across generations, but the algorithm will always return the most fit individual across all generations.
                   </Text>
 
                   <Title level={3}> Current Shortcomings </Title>

@@ -1,6 +1,8 @@
 import json
 import copy
 
+import matplotlib.pyplot as plt
+
 from tqdm import tqdm
 from genetic_algorithm import logger
 from genetic_algorithm.champion import Champion
@@ -10,12 +12,12 @@ from genetic_algorithm.genetic_algorithm import GeneticAlgorithm
 """
 PUT ENEMY CHAMPION IDS(KEYS) HERE. FOR A DETAILED LIST LOOK AT CHAMPION_DATA.JSON
 """
-ENEMY_TEAM = [ "9", "150", "39", "202", "126" ]
+ENEMY_TEAM = [ "266", "103", "84", "12", "63" ]
 
 # Change these as you wish :)
 POPULATION = 100
-CROSSOVER_RATE = 0.4
-MUTATION_RATE = 0.8
+CROSSOVER_RATE = 0.40
+MUTATION_RATE = 0.80
 NUM_GENERATIONS = 100
 META = True
 
@@ -104,3 +106,9 @@ if __name__ == "__main__":
         print(champion.name)
         print(champion.matchups)
         print("----------------------------------------")
+
+    plt.plot(range(NUM_GENERATIONS), genetic_algorithm.average_fitness, marker='', color='black', linewidth=2)
+    plt.title(f"Population: {POPULATION} Crossover: {CROSSOVER_RATE} Mutation: {MUTATION_RATE}")
+    plt.ylabel("Average Fitness")
+    plt.xlabel("Generation")
+    plt.show(block=True)

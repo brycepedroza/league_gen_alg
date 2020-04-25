@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import Champions from './components/champions.js'
 import Header from './components/header.js'
 import Footer from './components/footer.js'
@@ -11,7 +11,6 @@ function App() {
 
   const myRef = useRef(null)
   const executeScroll = () => {
-    console.log("scrolling")
     scrollToRef(myRef)
   }
 

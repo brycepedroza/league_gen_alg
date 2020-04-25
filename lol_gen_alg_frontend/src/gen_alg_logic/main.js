@@ -58,6 +58,7 @@ function run_gen_alg(gen_alg, generations){
 }
 
 export function full_gen_alg(enemy_ids, params){
+  console.log(enemy_ids)
   let enemy_team = create_enemy_team_comp(enemy_ids, champion_information);
   let filtered_champ_info = filter_champion_information(enemy_ids, champion_information);
   let gen_alg = new GeneticAlgorithm(

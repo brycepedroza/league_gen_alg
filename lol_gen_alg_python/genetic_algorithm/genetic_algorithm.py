@@ -1,4 +1,3 @@
-from genetic_algorithm.champion import Champion
 from genetic_algorithm.team_comp import TeamComp
 import random
 import logging
