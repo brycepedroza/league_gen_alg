@@ -23,13 +23,11 @@ jobs:
             docker build -t cse598bic.azurecr.io/lolcounter:${{ github.sha }} -f lol_gen_alg_frontend/Dockerfile lol_gen_alg_frontend/
             docker push cse598bic.azurecr.io/lolcounter:${{ github.sha }}
 
-        - name: 'Deploy to Azure Container Instances'
-          uses: 'azure/aci-deploy@v1'
+        - uses: azure/webapps-container-deploy@v1
           with:
-            resource-group: cse598
-            dns-name-label: https://lolcounter1.azurewebsites.net
-            image: cse598bic.azurecr.io/lolcounter:${{ github.sha }}
-            registry-username: ${{ secrets.REGISTRY_USERNAME }}
-            registry-password: ${{ secrets.REGISTRY_PASSWORD }}
-            name: lolcounter1
-            location: 'Central US'
+            app-name: 'lolcounter1'
+            images: 'cse598bic.azurecr.io/lolcounter:${{ github.sha }}'
+
+        - name: Azure logout
+          run: |
+            az logout
