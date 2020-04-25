@@ -1,7 +1,7 @@
 FROM mhart/alpine-node:12 AS builder
 WORKDIR /app
 COPY . .
-RUN yarn run build
+RUN npm run build
 
 # production environment
 FROM nginx:stable-alpine
