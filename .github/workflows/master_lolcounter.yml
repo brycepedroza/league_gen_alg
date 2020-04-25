@@ -14,7 +14,6 @@ jobs:
           with:
             creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-        -name: 'Build Image'
         - uses: azure/docker-login@v1
           with:
             login-server: cse598bic.azurecr.io
